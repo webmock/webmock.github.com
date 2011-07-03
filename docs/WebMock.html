@@ -1,0 +1,852 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Module: WebMock
+  
+    &mdash; Documentation by YARD 0.7.2
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  relpath = '';
+  if (relpath != '') relpath += '/';
+</script>
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+    
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index (W)</a> &raquo; 
+    
+    
+    <span class="title">WebMock</span>
+  
+  
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a id="class_list_link" href="#">Class List</a>
+  
+    <a id="method_list_link" href="#">Method List</a>
+  
+    <a id="file_list_link" href="#">File List</a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+    
+    <iframe id="search_frame"></iframe>
+    
+    <div id="content"><h1>Module: WebMock
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+  
+    
+      <dt class="r1">Extended by:</dt>
+      <dd class="r1"><span class='object_link'><a href="WebMock/API.html" title="WebMock::API (module)">API</a></span></dd>
+      
+    
+  
+    
+      <dt class="r2">Includes:</dt>
+      <dd class="r2"><span class='object_link'><a href="WebMock/API.html" title="WebMock::API (module)">API</a></span></dd>
+      
+    
+  
+  
+  
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">lib/web_mock/api.rb<span class="defines">,<br />
+  lib/web_mock/errors.rb,<br /> lib/web_mock/config.rb,<br /> lib/web_mock/version.rb,<br /> lib/web_mock/web_mock.rb,<br /> lib/web_mock/util/uri.rb,<br /> lib/web_mock/response.rb,<br /> lib/web_mock/deprecation.rb,<br /> lib/web_mock/util/headers.rb,<br /> lib/web_mock/request_stub.rb,<br /> lib/web_mock/stub_registry.rb,<br /> lib/web_mock/rspec/matchers.rb,<br /> lib/web_mock/request_pattern.rb,<br /> lib/web_mock/request_registry.rb,<br /> lib/web_mock/adapters/net_http.rb,<br /> lib/web_mock/request_signature.rb,<br /> lib/web_mock/callback_registry.rb,<br /> lib/web_mock/util/hash_counter.rb,<br /> lib/web_mock/assertion_failure.rb,<br /> lib/web_mock/responses_sequence.rb,<br /> lib/web_mock/stub_request_snippet.rb,<br /> lib/web_mock/adapters/net_http_response.rb,<br /> lib/web_mock/request_execution_verifier.rb,<br /> lib/web_mock/util/hash_keys_stringifier.rb,<br /> lib/web_mock/rspec/matchers/webmock_matcher.rb,<br /> lib/web_mock/rspec/matchers/request_pattern_matcher.rb</span>
+</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Defined Under Namespace</h2>
+<p class="children">
+   
+    
+      <strong class="modules">Modules:</strong> <span class='object_link'><a href="WebMock/API.html" title="WebMock::API (module)">API</a></span>, <span class='object_link'><a href="WebMock/Matchers.html" title="WebMock::Matchers (module)">Matchers</a></span>, <span class='object_link'><a href="WebMock/Net.html" title="WebMock::Net (module)">Net</a></span>, <span class='object_link'><a href="WebMock/NetHTTPUtility.html" title="WebMock::NetHTTPUtility (module)">NetHTTPUtility</a></span>, <span class='object_link'><a href="WebMock/Util.html" title="WebMock::Util (module)">Util</a></span>
+    
+   
+    
+      <strong class="classes">Classes:</strong> <span class='object_link'><a href="WebMock/AssertionFailure.html" title="WebMock::AssertionFailure (class)">AssertionFailure</a></span>, <span class='object_link'><a href="WebMock/BodyPattern.html" title="WebMock::BodyPattern (class)">BodyPattern</a></span>, <span class='object_link'><a href="WebMock/CallbackRegistry.html" title="WebMock::CallbackRegistry (class)">CallbackRegistry</a></span>, <span class='object_link'><a href="WebMock/Config.html" title="WebMock::Config (class)">Config</a></span>, <span class='object_link'><a href="WebMock/Deprecation.html" title="WebMock::Deprecation (class)">Deprecation</a></span>, <span class='object_link'><a href="WebMock/DynamicResponse.html" title="WebMock::DynamicResponse (class)">DynamicResponse</a></span>, <span class='object_link'><a href="WebMock/HeadersPattern.html" title="WebMock::HeadersPattern (class)">HeadersPattern</a></span>, <span class='object_link'><a href="WebMock/MethodPattern.html" title="WebMock::MethodPattern (class)">MethodPattern</a></span>, <span class='object_link'><a href="WebMock/NetConnectNotAllowedError.html" title="WebMock::NetConnectNotAllowedError (class)">NetConnectNotAllowedError</a></span>, <span class='object_link'><a href="WebMock/RequestExecutionVerifier.html" title="WebMock::RequestExecutionVerifier (class)">RequestExecutionVerifier</a></span>, <span class='object_link'><a href="WebMock/RequestPattern.html" title="WebMock::RequestPattern (class)">RequestPattern</a></span>, <span class='object_link'><a href="WebMock/RequestPatternMatcher.html" title="WebMock::RequestPatternMatcher (class)">RequestPatternMatcher</a></span>, <span class='object_link'><a href="WebMock/RequestRegistry.html" title="WebMock::RequestRegistry (class)">RequestRegistry</a></span>, <span class='object_link'><a href="WebMock/RequestSignature.html" title="WebMock::RequestSignature (class)">RequestSignature</a></span>, <span class='object_link'><a href="WebMock/RequestStub.html" title="WebMock::RequestStub (class)">RequestStub</a></span>, <span class='object_link'><a href="WebMock/Response.html" title="WebMock::Response (class)">Response</a></span>, <span class='object_link'><a href="WebMock/ResponseFactory.html" title="WebMock::ResponseFactory (class)">ResponseFactory</a></span>, <span class='object_link'><a href="WebMock/ResponsesSequence.html" title="WebMock::ResponsesSequence (class)">ResponsesSequence</a></span>, <span class='object_link'><a href="WebMock/StubRegistry.html" title="WebMock::StubRegistry (class)">StubRegistry</a></span>, <span class='object_link'><a href="WebMock/StubRequestSnippet.html" title="WebMock::StubRequestSnippet (class)">StubRequestSnippet</a></span>, <span class='object_link'><a href="WebMock/URIPattern.html" title="WebMock::URIPattern (class)">URIPattern</a></span>, <span class='object_link'><a href="WebMock/URIRegexpPattern.html" title="WebMock::URIRegexpPattern (class)">URIRegexpPattern</a></span>, <span class='object_link'><a href="WebMock/URIStringPattern.html" title="WebMock::URIStringPattern (class)">URIStringPattern</a></span>, <span class='object_link'><a href="WebMock/WebMockMatcher.html" title="WebMock::WebMockMatcher (class)">WebMockMatcher</a></span>
+    
+  
+</p>
+
+  <h2>Constant Summary</h2>
+  
+    <dl class="constants">
+      
+        <dt id="VERSION-constant" class="">VERSION =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>1.6.4</span><span class='tstring_end'>'</span></span></pre></dd>
+      
+    </dl>
+  
+
+
+  
+  
+  
+  
+
+
+  
+  
+  
+
+  
+    <h2>
+      Class Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#after_request-class_method" title="after_request (class method)">+ (Object) <strong>after_request</strong>(options = {}, &amp;block) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#allow_net_connect%21-class_method" title="allow_net_connect! (class method)">+ (Object) <strong>allow_net_connect!</strong>(options = {}) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#disable_net_connect%21-class_method" title="disable_net_connect! (class method)">+ (Object) <strong>disable_net_connect!</strong>(options = {}) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#included-class_method" title="included (class method)">+ (Object) <strong>included</strong>(clazz) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#net_connect_allowed%3F-class_method" title="net_connect_allowed? (class method)">+ (Boolean) <strong>net_connect_allowed?</strong>(uri = nil) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#print_executed_requests-class_method" title="print_executed_requests (class method)">+ (Object) <strong>print_executed_requests</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#registered_request%3F-class_method" title="registered_request? (class method)">+ (Boolean) <strong>registered_request?</strong>(request_signature) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#reset%21-class_method" title="reset! (class method)">+ (Object) <strong>reset!</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#reset_callbacks-class_method" title="reset_callbacks (class method)">+ (Object) <strong>reset_callbacks</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#reset_webmock-class_method" title="reset_webmock (class method)">+ (Object) <strong>reset_webmock</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#version-class_method" title="version (class method)">+ (Object) <strong>version</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#warn-class_method" title="warn (class method)">+ (Object) <strong>warn</strong>(message) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="WebMock/API.html" title="WebMock::API (module)">API</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="WebMock/API.html#a_request-instance_method" title="WebMock::API#a_request (method)">a_request</a></span>, <span class='object_link'><a href="WebMock/API.html#assert_not_requested-instance_method" title="WebMock::API#assert_not_requested (method)">assert_not_requested</a></span>, <span class='object_link'><a href="WebMock/API.html#assert_requested-instance_method" title="WebMock::API#assert_requested (method)">assert_requested</a></span>, <span class='object_link'><a href="WebMock/API.html#stub_request-instance_method" title="WebMock::API#stub_request (method)">stub_request</a></span></p>
+
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+    
+    
+      <div class="method_details first">
+  <p class="signature first" id="after_request-class_method">
+  
+    + (<tt>Object</tt>) <strong>after_request</strong>(options = {}, &amp;block) 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+63
+64
+65</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/web_mock/web_mock.rb', line 63</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id after_request'>after_request</span><span class='lparen'>(</span><span class='id options'>options</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id block'>block</span><span class='rparen'>)</span>
+  <span class='const'>WebMock</span><span class='op'>::</span><span class='const'>CallbackRegistry</span><span class='period'>.</span><span class='id add_callback'>add_callback</span><span class='lparen'>(</span><span class='id options'>options</span><span class='comma'>,</span> <span class='id block'>block</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="allow_net_connect!-class_method">
+  
+    + (<tt>Object</tt>) <strong>allow_net_connect!</strong>(options = {}) 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+28
+29
+30
+31</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/web_mock/web_mock.rb', line 28</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id allow_net_connect!'>allow_net_connect!</span><span class='lparen'>(</span><span class='id options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='const'>Config</span><span class='period'>.</span><span class='id instance'>instance</span><span class='period'>.</span><span class='id allow_net_connect'>allow_net_connect</span> <span class='op'>=</span> <span class='kw'>true</span>
+  <span class='const'>Config</span><span class='period'>.</span><span class='id instance'>instance</span><span class='period'>.</span><span class='id net_http_connect_on_start'>net_http_connect_on_start</span> <span class='op'>=</span> <span class='id options'>options</span><span class='lbracket'>[</span><span class='symbol'>:net_http_connect_on_start</span><span class='rbracket'>]</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="disable_net_connect!-class_method">
+  
+    + (<tt>Object</tt>) <strong>disable_net_connect!</strong>(options = {}) 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+33
+34
+35
+36
+37
+38</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/web_mock/web_mock.rb', line 33</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id disable_net_connect!'>disable_net_connect!</span><span class='lparen'>(</span><span class='id options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='const'>Config</span><span class='period'>.</span><span class='id instance'>instance</span><span class='period'>.</span><span class='id allow_net_connect'>allow_net_connect</span> <span class='op'>=</span> <span class='kw'>false</span>
+  <span class='const'>Config</span><span class='period'>.</span><span class='id instance'>instance</span><span class='period'>.</span><span class='id allow_localhost'>allow_localhost</span> <span class='op'>=</span> <span class='id options'>options</span><span class='lbracket'>[</span><span class='symbol'>:allow_localhost</span><span class='rbracket'>]</span>
+  <span class='const'>Config</span><span class='period'>.</span><span class='id instance'>instance</span><span class='period'>.</span><span class='id allow'>allow</span> <span class='op'>=</span> <span class='id options'>options</span><span class='lbracket'>[</span><span class='symbol'>:allow</span><span class='rbracket'>]</span>
+  <span class='const'>Config</span><span class='period'>.</span><span class='id instance'>instance</span><span class='period'>.</span><span class='id net_http_connect_on_start'>net_http_connect_on_start</span> <span class='op'>=</span> <span class='id options'>options</span><span class='lbracket'>[</span><span class='symbol'>:net_http_connect_on_start</span><span class='rbracket'>]</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="included-class_method">
+  
+    + (<tt>Object</tt>) <strong>included</strong>(clazz) 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/web_mock/web_mock.rb', line 3</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id included'>included</span><span class='lparen'>(</span><span class='id clazz'>clazz</span><span class='rparen'>)</span>
+  <span class='const'>WebMock</span><span class='op'>::</span><span class='const'>Deprecation</span><span class='period'>.</span><span class='id warning'>warning</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>include WebMock is deprecated. Please include WebMock::API instead</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='id clazz'>clazz</span><span class='period'>.</span><span class='id instance_methods'>instance_methods</span><span class='period'>.</span><span class='id map'>map</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='symbol'>:to_s</span><span class='rparen'>)</span><span class='period'>.</span><span class='id include?'>include?</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>request</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+    <span class='id warn'>warn</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>WebMock#request was not included in </span><span class='embexpr_beg'>#{</span><span class='id clazz'>clazz</span><span class='rbrace'>}</span><span class='tstring_content'> to avoid name collision</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>else</span>
+    <span class='id clazz'>clazz</span><span class='period'>.</span><span class='id class_eval'>class_eval</span> <span class='kw'>do</span>
+      <span class='kw'>def</span> <span class='id request'>request</span><span class='lparen'>(</span><span class='id method'>method</span><span class='comma'>,</span> <span class='id uri'>uri</span><span class='rparen'>)</span>
+        <span class='const'>WebMock</span><span class='op'>::</span><span class='const'>Deprecation</span><span class='period'>.</span><span class='id warning'>warning</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>WebMock#request is deprecated. Please use WebMock::API#a_request method instead</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+        <span class='const'>WebMock</span><span class='period'>.</span><span class='id a_request'>a_request</span><span class='lparen'>(</span><span class='id method'>method</span><span class='comma'>,</span> <span class='id uri'>uri</span><span class='rparen'>)</span>
+      <span class='kw'>end</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="net_connect_allowed?-class_method">
+  
+    + (<tt>Boolean</tt>) <strong>net_connect_allowed?</strong>(uri = nil) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+40
+41
+42
+43
+44
+45
+46
+47</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/web_mock/web_mock.rb', line 40</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id net_connect_allowed?'>net_connect_allowed?</span><span class='lparen'>(</span><span class='id uri'>uri</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='id uri'>uri</span><span class='period'>.</span><span class='id is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>String</span><span class='rparen'>)</span>
+    <span class='id uri'>uri</span> <span class='op'>=</span> <span class='const'>WebMock</span><span class='op'>::</span><span class='const'>Util</span><span class='op'>::</span><span class='const'>URI</span><span class='period'>.</span><span class='id normalize_uri'>normalize_uri</span><span class='lparen'>(</span><span class='id uri'>uri</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+  <span class='const'>Config</span><span class='period'>.</span><span class='id instance'>instance</span><span class='period'>.</span><span class='id allow_net_connect'>allow_net_connect</span> <span class='op'>||</span>
+    <span class='lparen'>(</span><span class='const'>Config</span><span class='period'>.</span><span class='id instance'>instance</span><span class='period'>.</span><span class='id allow_localhost'>allow_localhost</span> <span class='op'>&amp;&amp;</span> <span class='const'>WebMock</span><span class='op'>::</span><span class='const'>Util</span><span class='op'>::</span><span class='const'>URI</span><span class='period'>.</span><span class='id is_uri_localhost?'>is_uri_localhost?</span><span class='lparen'>(</span><span class='id uri'>uri</span><span class='rparen'>)</span><span class='rparen'>)</span> <span class='op'>||</span>
+    <span class='const'>Config</span><span class='period'>.</span><span class='id instance'>instance</span><span class='period'>.</span><span class='id allow'>allow</span> <span class='op'>&amp;&amp;</span> <span class='lparen'>(</span><span class='const'>Config</span><span class='period'>.</span><span class='id instance'>instance</span><span class='period'>.</span><span class='id allow'>allow</span><span class='period'>.</span><span class='id include?'>include?</span><span class='lparen'>(</span><span class='id uri'>uri</span><span class='period'>.</span><span class='id host'>host</span><span class='rparen'>)</span> <span class='op'>||</span> <span class='const'>Config</span><span class='period'>.</span><span class='id instance'>instance</span><span class='period'>.</span><span class='id allow'>allow</span><span class='period'>.</span><span class='id include?'>include?</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id uri'>uri</span><span class='period'>.</span><span class='id host'>host</span><span class='rbrace'>}</span><span class='tstring_content'>:</span><span class='embexpr_beg'>#{</span><span class='id uri'>uri</span><span class='period'>.</span><span class='id port'>port</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="print_executed_requests-class_method">
+  
+    + (<tt>Object</tt>) <strong>print_executed_requests</strong> 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+71
+72
+73</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/web_mock/web_mock.rb', line 71</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id print_executed_requests'>print_executed_requests</span>
+  <span class='id puts'>puts</span> <span class='const'>WebMock</span><span class='op'>::</span><span class='const'>RequestExecutionVerifier</span><span class='period'>.</span><span class='id executed_requests_message'>executed_requests_message</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="registered_request?-class_method">
+  
+    + (<tt>Boolean</tt>) <strong>registered_request?</strong>(request_signature) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+67
+68
+69</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/web_mock/web_mock.rb', line 67</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id registered_request?'>registered_request?</span><span class='lparen'>(</span><span class='id request_signature'>request_signature</span><span class='rparen'>)</span>
+  <span class='const'>WebMock</span><span class='op'>::</span><span class='const'>StubRegistry</span><span class='period'>.</span><span class='id instance'>instance</span><span class='period'>.</span><span class='id registered_request?'>registered_request?</span><span class='lparen'>(</span><span class='id request_signature'>request_signature</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="reset!-class_method">
+  
+    + (<tt>Object</tt>) <strong>reset!</strong> 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+49
+50
+51
+52</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/web_mock/web_mock.rb', line 49</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id reset!'>reset!</span>
+  <span class='const'>WebMock</span><span class='op'>::</span><span class='const'>RequestRegistry</span><span class='period'>.</span><span class='id instance'>instance</span><span class='period'>.</span><span class='id reset!'>reset!</span>
+  <span class='const'>WebMock</span><span class='op'>::</span><span class='const'>StubRegistry</span><span class='period'>.</span><span class='id instance'>instance</span><span class='period'>.</span><span class='id reset!'>reset!</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="reset_callbacks-class_method">
+  
+    + (<tt>Object</tt>) <strong>reset_callbacks</strong> 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+59
+60
+61</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/web_mock/web_mock.rb', line 59</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id reset_callbacks'>reset_callbacks</span>
+  <span class='const'>WebMock</span><span class='op'>::</span><span class='const'>CallbackRegistry</span><span class='period'>.</span><span class='id reset'>reset</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="reset_webmock-class_method">
+  
+    + (<tt>Object</tt>) <strong>reset_webmock</strong> 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+54
+55
+56
+57</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/web_mock/web_mock.rb', line 54</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id reset_webmock'>reset_webmock</span>
+  <span class='const'>WebMock</span><span class='op'>::</span><span class='const'>Deprecation</span><span class='period'>.</span><span class='id warning'>warning</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>WebMock.reset_webmock is deprecated. Please use WebMock.reset! method instead</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='id reset!'>reset!</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="version-class_method">
+  
+    + (<tt>Object</tt>) <strong>version</strong> 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+24
+25
+26</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/web_mock/web_mock.rb', line 24</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id version'>version</span>
+  <span class='const'>VERSION</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="warn-class_method">
+  
+    + (<tt>Object</tt>) <strong>warn</strong>(message) 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+75
+76
+77
+78</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/web_mock/web_mock.rb', line 75</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id warn'>warn</span><span class='lparen'>(</span><span class='id message'>message</span><span class='rparen'>)</span>
+  <span class='gvar'>$stderr</span><span class='period'>.</span><span class='id puts'>puts</span> <span class='id message'>message</span>
+  <span class='gvar'>$stderr</span><span class='period'>.</span><span class='id puts'>puts</span> <span class='id caller'>caller</span><span class='period'>.</span><span class='id join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='gvar'>$VERBOSE</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+    
+    <div id="footer">
+  Generated on Sun Jul  3 13:12:23 2011 by 
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.7.2 (ruby-1.9.2).
+</div>
+
+  </body>
+</html>

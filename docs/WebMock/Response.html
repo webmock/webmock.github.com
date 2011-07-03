@@ -1,0 +1,919 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: WebMock::Response
+  
+    &mdash; Documentation by YARD 0.7.2
+  
+</title>
+
+  <link rel="stylesheet" href="../css/style.css" type="text/css" media="screen" charset="utf-8" />
+
+  <link rel="stylesheet" href="../css/common.css" type="text/css" media="screen" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  relpath = '..';
+  if (relpath != '') relpath += '/';
+</script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+    
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../_index.html">Index (R)</a> &raquo; 
+    <span class='title'><span class='object_link'><a href="../WebMock.html" title="WebMock (module)">WebMock</a></span></span>
+     &raquo; 
+    <span class="title">Response</span>
+  
+  
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a id="class_list_link" href="#">Class List</a>
+  
+    <a id="method_list_link" href="#">Method List</a>
+  
+    <a id="file_list_link" href="#">File List</a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+    
+    <iframe id="search_frame"></iframe>
+    
+    <div id="content"><h1>Class: WebMock::Response
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName">Object</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">WebMock::Response</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">lib/web_mock/response.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<div id="subclasses">
+  <h2>Direct Known Subclasses</h2>
+  <p class="children"><span class='object_link'><a href="DynamicResponse.html" title="WebMock::DynamicResponse (class)">DynamicResponse</a></span></p>
+</div>
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#%3D%3D-instance_method" title="#== (instance method)">- (Object) <strong>==</strong>(other) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#body-instance_method" title="#body (instance method)">- (Object) <strong>body</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#body%3D-instance_method" title="#body= (instance method)">- (Object) <strong>body=</strong>(body) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#evaluate-instance_method" title="#evaluate (instance method)">- (Object) <strong>evaluate</strong>(request_signature) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#exception-instance_method" title="#exception (instance method)">- (Object) <strong>exception</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#exception%3D-instance_method" title="#exception= (instance method)">- (Object) <strong>exception=</strong>(exception) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#headers-instance_method" title="#headers (instance method)">- (Object) <strong>headers</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#headers%3D-instance_method" title="#headers= (instance method)">- (Object) <strong>headers=</strong>(headers) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize-instance_method" title="#initialize (instance method)">- (Response) <strong>initialize</strong>(options = {}) </a>
+    
+
+    
+  </span>
+  
+    <span class="note title constructor">constructor</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>A new instance of Response.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#options%3D-instance_method" title="#options= (instance method)">- (Object) <strong>options=</strong>(options) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#raise_error_if_any-instance_method" title="#raise_error_if_any (instance method)">- (Object) <strong>raise_error_if_any</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#should_timeout-instance_method" title="#should_timeout (instance method)">- (Object) <strong>should_timeout</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#status-instance_method" title="#status (instance method)">- (Object) <strong>status</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#status%3D-instance_method" title="#status= (instance method)">- (Object) <strong>status=</strong>(status) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+<div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <div class="method_details first">
+  <p class="signature first" id="initialize-instance_method">
+  
+    - (<tt><span class='object_link'><a href="" title="WebMock::Response (class)">Response</a></span></tt>) <strong>initialize</strong>(options = {}) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>A new instance of Response</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+19
+20
+21
+22
+23
+24
+25</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/web_mock/response.rb', line 19</span>
+
+<span class='kw'>def</span> <span class='id initialize'>initialize</span><span class='lparen'>(</span><span class='id options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='id options'>options</span><span class='period'>.</span><span class='id is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>IO</span><span class='rparen'>)</span> <span class='op'>||</span> <span class='id options'>options</span><span class='period'>.</span><span class='id is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>String</span><span class='rparen'>)</span>
+    <span class='kw'>self</span><span class='period'>.</span><span class='id options'>options</span> <span class='op'>=</span> <span class='id read_raw_response'>read_raw_response</span><span class='lparen'>(</span><span class='id options'>options</span><span class='rparen'>)</span>
+  <span class='kw'>else</span>
+    <span class='kw'>self</span><span class='period'>.</span><span class='id options'>options</span> <span class='op'>=</span> <span class='id options'>options</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+  
+</div>
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+    
+    
+      <div class="method_details first">
+  <p class="signature first" id="==-instance_method">
+  
+    - (<tt>Object</tt>) <strong>==</strong>(other) 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+92
+93
+94
+95
+96
+97
+98</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/web_mock/response.rb', line 92</span>
+
+<span class='kw'>def</span> <span class='op'>==</span><span class='lparen'>(</span><span class='id other'>other</span><span class='rparen'>)</span>
+  <span class='kw'>self</span><span class='period'>.</span><span class='id body'>body</span> <span class='op'>==</span> <span class='id other'>other</span><span class='period'>.</span><span class='id body'>body</span> <span class='op'>&amp;&amp;</span>
+  <span class='kw'>self</span><span class='period'>.</span><span class='id headers'>headers</span> <span class='op'>===</span> <span class='id other'>other</span><span class='period'>.</span><span class='id headers'>headers</span> <span class='op'>&amp;&amp;</span>
+  <span class='kw'>self</span><span class='period'>.</span><span class='id status'>status</span> <span class='op'>==</span> <span class='id other'>other</span><span class='period'>.</span><span class='id status'>status</span> <span class='op'>&amp;&amp;</span>
+  <span class='kw'>self</span><span class='period'>.</span><span class='id exception'>exception</span> <span class='op'>==</span> <span class='id other'>other</span><span class='period'>.</span><span class='id exception'>exception</span> <span class='op'>&amp;&amp;</span>
+  <span class='kw'>self</span><span class='period'>.</span><span class='id should_timeout'>should_timeout</span> <span class='op'>==</span> <span class='id other'>other</span><span class='period'>.</span><span class='id should_timeout'>should_timeout</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="body-instance_method">
+  
+    - (<tt>Object</tt>) <strong>body</strong> 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+38
+39
+40</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/web_mock/response.rb', line 38</span>
+
+<span class='kw'>def</span> <span class='id body'>body</span>
+  <span class='ivar'>@body</span> <span class='op'>||</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_end'>'</span></span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="body=-instance_method">
+  
+    - (<tt>Object</tt>) <strong>body=</strong>(body) 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+42
+43
+44
+45</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/web_mock/response.rb', line 42</span>
+
+<span class='kw'>def</span> <span class='id body='>body=</span><span class='lparen'>(</span><span class='id body'>body</span><span class='rparen'>)</span>
+  <span class='ivar'>@body</span> <span class='op'>=</span> <span class='id body'>body</span>
+  <span class='id stringify_body!'>stringify_body!</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="evaluate-instance_method">
+  
+    - (<tt>Object</tt>) <strong>evaluate</strong>(request_signature) 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+83
+84
+85
+86
+87
+88
+89
+90</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/web_mock/response.rb', line 83</span>
+
+<span class='kw'>def</span> <span class='id evaluate'>evaluate</span><span class='lparen'>(</span><span class='id request_signature'>request_signature</span><span class='rparen'>)</span>
+  <span class='kw'>self</span><span class='period'>.</span><span class='id body'>body</span> <span class='op'>=</span> <span class='ivar'>@body</span><span class='period'>.</span><span class='id call'>call</span><span class='lparen'>(</span><span class='id request_signature'>request_signature</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='ivar'>@body</span><span class='period'>.</span><span class='id is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Proc</span><span class='rparen'>)</span>
+  <span class='kw'>self</span><span class='period'>.</span><span class='id headers'>headers</span> <span class='op'>=</span> <span class='ivar'>@headers</span><span class='period'>.</span><span class='id call'>call</span><span class='lparen'>(</span><span class='id request_signature'>request_signature</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='ivar'>@headers</span><span class='period'>.</span><span class='id is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Proc</span><span class='rparen'>)</span>
+  <span class='kw'>self</span><span class='period'>.</span><span class='id status'>status</span> <span class='op'>=</span> <span class='ivar'>@status</span><span class='period'>.</span><span class='id call'>call</span><span class='lparen'>(</span><span class='id request_signature'>request_signature</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='ivar'>@status</span><span class='period'>.</span><span class='id is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Proc</span><span class='rparen'>)</span>
+  <span class='ivar'>@should_timeout</span> <span class='op'>=</span> <span class='ivar'>@should_timeout</span><span class='period'>.</span><span class='id call'>call</span><span class='lparen'>(</span><span class='id request_signature'>request_signature</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='ivar'>@should_timeout</span><span class='period'>.</span><span class='id is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Proc</span><span class='rparen'>)</span>
+  <span class='ivar'>@exception</span> <span class='op'>=</span> <span class='ivar'>@exception</span><span class='period'>.</span><span class='id call'>call</span><span class='lparen'>(</span><span class='id request_signature'>request_signature</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='ivar'>@exception</span><span class='period'>.</span><span class='id is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Proc</span><span class='rparen'>)</span>
+  <span class='kw'>self</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="exception-instance_method">
+  
+    - (<tt>Object</tt>) <strong>exception</strong> 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+55
+56
+57</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/web_mock/response.rb', line 55</span>
+
+<span class='kw'>def</span> <span class='id exception'>exception</span>
+  <span class='ivar'>@exception</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="exception=-instance_method">
+  
+    - (<tt>Object</tt>) <strong>exception=</strong>(exception) 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+59
+60
+61
+62
+63
+64
+65</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/web_mock/response.rb', line 59</span>
+
+<span class='kw'>def</span> <span class='id exception='>exception=</span><span class='lparen'>(</span><span class='id exception'>exception</span><span class='rparen'>)</span>
+  <span class='ivar'>@exception</span> <span class='op'>=</span> <span class='kw'>case</span> <span class='id exception'>exception</span>
+  <span class='kw'>when</span> <span class='const'>String</span> <span class='kw'>then</span> <span class='const'>StandardError</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='id exception'>exception</span><span class='rparen'>)</span>
+  <span class='kw'>when</span> <span class='const'>Class</span> <span class='kw'>then</span> <span class='id exception'>exception</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Exception from WebMock</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='kw'>when</span> <span class='const'>Exception</span> <span class='kw'>then</span> <span class='id exception'>exception</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="headers-instance_method">
+  
+    - (<tt>Object</tt>) <strong>headers</strong> 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+27
+28
+29</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/web_mock/response.rb', line 27</span>
+
+<span class='kw'>def</span> <span class='id headers'>headers</span>
+  <span class='ivar'>@headers</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="headers=-instance_method">
+  
+    - (<tt>Object</tt>) <strong>headers=</strong>(headers) 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+31
+32
+33
+34
+35
+36</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/web_mock/response.rb', line 31</span>
+
+<span class='kw'>def</span> <span class='id headers='>headers=</span><span class='lparen'>(</span><span class='id headers'>headers</span><span class='rparen'>)</span>
+  <span class='ivar'>@headers</span> <span class='op'>=</span> <span class='id headers'>headers</span>
+  <span class='kw'>if</span> <span class='ivar'>@headers</span> <span class='op'>&amp;&amp;</span> <span class='op'>!</span><span class='ivar'>@headers</span><span class='period'>.</span><span class='id is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Proc</span><span class='rparen'>)</span>
+    <span class='ivar'>@headers</span> <span class='op'>=</span> <span class='const'>Util</span><span class='op'>::</span><span class='const'>Headers</span><span class='period'>.</span><span class='id normalize_headers'>normalize_headers</span><span class='lparen'>(</span><span class='ivar'>@headers</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="options=-instance_method">
+  
+    - (<tt>Object</tt>) <strong>options=</strong>(options) 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+75
+76
+77
+78
+79
+80
+81</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/web_mock/response.rb', line 75</span>
+
+<span class='kw'>def</span> <span class='id options='>options=</span><span class='lparen'>(</span><span class='id options'>options</span><span class='rparen'>)</span>
+  <span class='kw'>self</span><span class='period'>.</span><span class='id headers'>headers</span> <span class='op'>=</span> <span class='id options'>options</span><span class='lbracket'>[</span><span class='symbol'>:headers</span><span class='rbracket'>]</span>
+  <span class='kw'>self</span><span class='period'>.</span><span class='id status'>status</span> <span class='op'>=</span> <span class='id options'>options</span><span class='lbracket'>[</span><span class='symbol'>:status</span><span class='rbracket'>]</span>
+  <span class='kw'>self</span><span class='period'>.</span><span class='id body'>body</span> <span class='op'>=</span> <span class='id options'>options</span><span class='lbracket'>[</span><span class='symbol'>:body</span><span class='rbracket'>]</span>
+  <span class='kw'>self</span><span class='period'>.</span><span class='id exception'>exception</span> <span class='op'>=</span> <span class='id options'>options</span><span class='lbracket'>[</span><span class='symbol'>:exception</span><span class='rbracket'>]</span>
+  <span class='ivar'>@should_timeout</span> <span class='op'>=</span> <span class='id options'>options</span><span class='lbracket'>[</span><span class='symbol'>:should_timeout</span><span class='rbracket'>]</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="raise_error_if_any-instance_method">
+  
+    - (<tt>Object</tt>) <strong>raise_error_if_any</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Raises:</h3>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>@exception</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+67
+68
+69</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/web_mock/response.rb', line 67</span>
+
+<span class='kw'>def</span> <span class='id raise_error_if_any'>raise_error_if_any</span>
+  <span class='id raise'>raise</span> <span class='ivar'>@exception</span> <span class='kw'>if</span> <span class='ivar'>@exception</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="should_timeout-instance_method">
+  
+    - (<tt>Object</tt>) <strong>should_timeout</strong> 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+71
+72
+73</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/web_mock/response.rb', line 71</span>
+
+<span class='kw'>def</span> <span class='id should_timeout'>should_timeout</span>
+  <span class='ivar'>@should_timeout</span> <span class='op'>==</span> <span class='kw'>true</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="status-instance_method">
+  
+    - (<tt>Object</tt>) <strong>status</strong> 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+47
+48
+49</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/web_mock/response.rb', line 47</span>
+
+<span class='kw'>def</span> <span class='id status'>status</span>
+  <span class='ivar'>@status</span> <span class='op'>||</span> <span class='lbracket'>[</span><span class='int'>200</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="status=-instance_method">
+  
+    - (<tt>Object</tt>) <strong>status=</strong>(status) 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+51
+52
+53</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/web_mock/response.rb', line 51</span>
+
+<span class='kw'>def</span> <span class='id status='>status=</span><span class='lparen'>(</span><span class='id status'>status</span><span class='rparen'>)</span>
+  <span class='ivar'>@status</span> <span class='op'>=</span> <span class='id status'>status</span><span class='period'>.</span><span class='id is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Integer</span><span class='rparen'>)</span> <span class='op'>?</span> <span class='lbracket'>[</span><span class='id status'>status</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span> <span class='op'>:</span> <span class='id status'>status</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+    
+    <div id="footer">
+  Generated on Sun Jul  3 13:12:23 2011 by 
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.7.2 (ruby-1.9.2).
+</div>
+
+  </body>
+</html>

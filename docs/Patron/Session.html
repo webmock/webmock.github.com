@@ -1,0 +1,538 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: Patron::Session
+  
+    &mdash; Documentation by YARD 0.7.2
+  
+</title>
+
+  <link rel="stylesheet" href="../css/style.css" type="text/css" media="screen" charset="utf-8" />
+
+  <link rel="stylesheet" href="../css/common.css" type="text/css" media="screen" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  relpath = '..';
+  if (relpath != '') relpath += '/';
+</script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+    
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../_index.html">Index (S)</a> &raquo; 
+    <span class='title'><span class='object_link'><a href="../Patron.html" title="Patron (module)">Patron</a></span></span>
+     &raquo; 
+    <span class="title">Session</span>
+  
+  
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a id="class_list_link" href="#">Class List</a>
+  
+    <a id="method_list_link" href="#">Method List</a>
+  
+    <a id="file_list_link" href="#">File List</a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+    
+    <iframe id="search_frame"></iframe>
+    
+    <div id="content"><h1>Class: Patron::Session
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName">Object</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">Patron::Session</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">lib/web_mock/adapters/patron.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#build_patron_response-instance_method" title="#build_patron_response (instance method)">- (Object) <strong>build_patron_response</strong>(webmock_response) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#build_request_signature-instance_method" title="#build_request_signature (instance method)">- (Object) <strong>build_request_signature</strong>(req) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#build_webmock_response-instance_method" title="#build_webmock_response (instance method)">- (Object) <strong>build_webmock_response</strong>(patron_response) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#handle_file_name-instance_method" title="#handle_file_name (instance method)">- (Object) <strong>handle_file_name</strong>(req, webmock_response) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#handle_request_with_webmock-instance_method" title="#handle_request_with_webmock (instance method)">- (Object) <strong>handle_request_with_webmock</strong>(req) </a>
+    
+
+    
+      (also: #handle_request)
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+    
+    
+      <div class="method_details first">
+  <p class="signature first" id="build_patron_response-instance_method">
+  
+    - (<tt>Object</tt>) <strong>build_patron_response</strong>(webmock_response) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Raises:</h3>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Patron::TimeoutError</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/web_mock/adapters/patron.rb', line 79</span>
+
+<span class='kw'>def</span> <span class='id build_patron_response'>build_patron_response</span><span class='lparen'>(</span><span class='id webmock_response'>webmock_response</span><span class='rparen'>)</span>
+  <span class='id raise'>raise</span> <span class='const'>Patron</span><span class='op'>::</span><span class='const'>TimeoutError</span> <span class='kw'>if</span> <span class='id webmock_response'>webmock_response</span><span class='period'>.</span><span class='id should_timeout'>should_timeout</span>
+  <span class='id webmock_response'>webmock_response</span><span class='period'>.</span><span class='id raise_error_if_any'>raise_error_if_any</span>
+  <span class='id res'>res</span> <span class='op'>=</span> <span class='const'>Patron</span><span class='op'>::</span><span class='const'>Response</span><span class='period'>.</span><span class='id new'>new</span>
+  <span class='id res'>res</span><span class='period'>.</span><span class='id instance_variable_set'>instance_variable_set</span><span class='lparen'>(</span><span class='symbol'>:@body</span><span class='comma'>,</span> <span class='id webmock_response'>webmock_response</span><span class='period'>.</span><span class='id body'>body</span><span class='rparen'>)</span>
+  <span class='id res'>res</span><span class='period'>.</span><span class='id instance_variable_set'>instance_variable_set</span><span class='lparen'>(</span><span class='symbol'>:@status</span><span class='comma'>,</span> <span class='id webmock_response'>webmock_response</span><span class='period'>.</span><span class='id status'>status</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+  <span class='id res'>res</span><span class='period'>.</span><span class='id instance_variable_set'>instance_variable_set</span><span class='lparen'>(</span><span class='symbol'>:@status_line</span><span class='comma'>,</span> <span class='id webmock_response'>webmock_response</span><span class='period'>.</span><span class='id status'>status</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+  <span class='id res'>res</span><span class='period'>.</span><span class='id instance_variable_set'>instance_variable_set</span><span class='lparen'>(</span><span class='symbol'>:@headers</span><span class='comma'>,</span> <span class='id webmock_response'>webmock_response</span><span class='period'>.</span><span class='id headers'>headers</span><span class='rparen'>)</span>
+  <span class='id res'>res</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="build_request_signature-instance_method">
+  
+    - (<tt>Object</tt>) <strong>build_request_signature</strong>(req) 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/web_mock/adapters/patron.rb', line 51</span>
+
+<span class='kw'>def</span> <span class='id build_request_signature'>build_request_signature</span><span class='lparen'>(</span><span class='id req'>req</span><span class='rparen'>)</span>
+  <span class='id uri'>uri</span> <span class='op'>=</span> <span class='const'>WebMock</span><span class='op'>::</span><span class='const'>Util</span><span class='op'>::</span><span class='const'>URI</span><span class='period'>.</span><span class='id heuristic_parse'>heuristic_parse</span><span class='lparen'>(</span><span class='id req'>req</span><span class='period'>.</span><span class='id url'>url</span><span class='rparen'>)</span>
+  <span class='id uri'>uri</span><span class='period'>.</span><span class='id path'>path</span> <span class='op'>=</span> <span class='id uri'>uri</span><span class='period'>.</span><span class='id normalized_path'>normalized_path</span><span class='period'>.</span><span class='id gsub'>gsub</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>[^:]//</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='id uri'>uri</span><span class='period'>.</span><span class='id user'>user</span> <span class='op'>=</span> <span class='id req'>req</span><span class='period'>.</span><span class='id username'>username</span>
+  <span class='id uri'>uri</span><span class='period'>.</span><span class='id password'>password</span> <span class='op'>=</span> <span class='id req'>req</span><span class='period'>.</span><span class='id password'>password</span>
+
+  <span class='kw'>if</span> <span class='lbracket'>[</span><span class='symbol'>:put</span><span class='comma'>,</span> <span class='symbol'>:post</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id include?'>include?</span><span class='lparen'>(</span><span class='id req'>req</span><span class='period'>.</span><span class='id action'>action</span><span class='rparen'>)</span>
+    <span class='kw'>if</span> <span class='id req'>req</span><span class='period'>.</span><span class='id file_name'>file_name</span>
+      <span class='kw'>if</span> <span class='op'>!</span><span class='const'>File</span><span class='period'>.</span><span class='id exist?'>exist?</span><span class='lparen'>(</span><span class='id req'>req</span><span class='period'>.</span><span class='id file_name'>file_name</span><span class='rparen'>)</span> <span class='op'>||</span> <span class='op'>!</span><span class='const'>File</span><span class='period'>.</span><span class='id readable?'>readable?</span><span class='lparen'>(</span><span class='id req'>req</span><span class='period'>.</span><span class='id file_name'>file_name</span><span class='rparen'>)</span>
+        <span class='id raise'>raise</span> <span class='const'>ArgumentError</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Unable to open specified file.</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+      <span class='kw'>end</span>
+      <span class='id request_body'>request_body</span> <span class='op'>=</span> <span class='const'>File</span><span class='period'>.</span><span class='id read'>read</span><span class='lparen'>(</span><span class='id req'>req</span><span class='period'>.</span><span class='id file_name'>file_name</span><span class='rparen'>)</span>
+    <span class='kw'>elsif</span> <span class='id req'>req</span><span class='period'>.</span><span class='id upload_data'>upload_data</span>
+      <span class='id request_body'>request_body</span> <span class='op'>=</span> <span class='id req'>req</span><span class='period'>.</span><span class='id upload_data'>upload_data</span>
+    <span class='kw'>else</span>
+      <span class='id raise'>raise</span> <span class='const'>ArgumentError</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Must provide either data or a filename when doing a PUT or POST</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+
+  <span class='id request_signature'>request_signature</span> <span class='op'>=</span> <span class='const'>WebMock</span><span class='op'>::</span><span class='const'>RequestSignature</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span>
+    <span class='id req'>req</span><span class='period'>.</span><span class='id action'>action</span><span class='comma'>,</span>
+    <span class='id uri'>uri</span><span class='period'>.</span><span class='id to_s'>to_s</span><span class='comma'>,</span>
+    <span class='symbol'>:body</span> <span class='op'>=&gt;</span> <span class='id request_body'>request_body</span><span class='comma'>,</span>
+    <span class='symbol'>:headers</span> <span class='op'>=&gt;</span> <span class='id req'>req</span><span class='period'>.</span><span class='id headers'>headers</span>
+  <span class='rparen'>)</span>
+  <span class='id request_signature'>request_signature</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="build_webmock_response-instance_method">
+  
+    - (<tt>Object</tt>) <strong>build_webmock_response</strong>(patron_response) 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+90
+91
+92
+93
+94
+95
+96
+97</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/web_mock/adapters/patron.rb', line 90</span>
+
+<span class='kw'>def</span> <span class='id build_webmock_response'>build_webmock_response</span><span class='lparen'>(</span><span class='id patron_response'>patron_response</span><span class='rparen'>)</span>
+  <span class='id webmock_response'>webmock_response</span> <span class='op'>=</span> <span class='const'>WebMock</span><span class='op'>::</span><span class='const'>Response</span><span class='period'>.</span><span class='id new'>new</span>
+  <span class='id reason'>reason</span> <span class='op'>=</span> <span class='id patron_response'>patron_response</span><span class='period'>.</span><span class='id status_line'>status_line</span><span class='period'>.</span><span class='id scan'>scan</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>%r(</span><span class='tstring_content'>\AHTTP/(\d+\.\d+)\s+(\d\d\d)\s*([^\r\n]+)?\r?\z</span><span class='regexp_end'>)</span></span><span class='rparen'>)</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='int'>2</span><span class='rbracket'>]</span>
+  <span class='id webmock_response'>webmock_response</span><span class='period'>.</span><span class='id status'>status</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='id patron_response'>patron_response</span><span class='period'>.</span><span class='id status'>status</span><span class='comma'>,</span> <span class='id reason'>reason</span><span class='rbracket'>]</span>
+  <span class='id webmock_response'>webmock_response</span><span class='period'>.</span><span class='id body'>body</span> <span class='op'>=</span> <span class='id patron_response'>patron_response</span><span class='period'>.</span><span class='id body'>body</span>
+  <span class='id webmock_response'>webmock_response</span><span class='period'>.</span><span class='id headers'>headers</span> <span class='op'>=</span> <span class='id patron_response'>patron_response</span><span class='period'>.</span><span class='id headers'>headers</span>
+  <span class='id webmock_response'>webmock_response</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="handle_file_name-instance_method">
+  
+    - (<tt>Object</tt>) <strong>handle_file_name</strong>(req, webmock_response) 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/web_mock/adapters/patron.rb', line 39</span>
+
+<span class='kw'>def</span> <span class='id handle_file_name'>handle_file_name</span><span class='lparen'>(</span><span class='id req'>req</span><span class='comma'>,</span> <span class='id webmock_response'>webmock_response</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='id req'>req</span><span class='period'>.</span><span class='id action'>action</span> <span class='op'>==</span> <span class='symbol'>:get</span> <span class='op'>&amp;&amp;</span> <span class='id req'>req</span><span class='period'>.</span><span class='id file_name'>file_name</span>
+    <span class='kw'>begin</span>
+      <span class='const'>File</span><span class='period'>.</span><span class='id open'>open</span><span class='lparen'>(</span><span class='id req'>req</span><span class='period'>.</span><span class='id file_name'>file_name</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>w</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id f'>f</span><span class='op'>|</span>
+        <span class='id f'>f</span><span class='period'>.</span><span class='id write'>write</span> <span class='id webmock_response'>webmock_response</span><span class='period'>.</span><span class='id body'>body</span>
+      <span class='kw'>end</span>
+    <span class='kw'>rescue</span> <span class='const'>Errno</span><span class='op'>::</span><span class='const'>EACCES</span>
+      <span class='id raise'>raise</span> <span class='const'>ArgumentError</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Unable to open specified file.</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="handle_request_with_webmock-instance_method">
+  
+    - (<tt>Object</tt>) <strong>handle_request_with_webmock</strong>(req) 
+  
+
+  
+    <span class="aliases">Also known as:
+    <span class="names"><span id='handle_request-instance_method'>handle_request</span></span>
+    </span>
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/web_mock/adapters/patron.rb', line 8</span>
+
+<span class='kw'>def</span> <span class='id handle_request_with_webmock'>handle_request_with_webmock</span><span class='lparen'>(</span><span class='id req'>req</span><span class='rparen'>)</span>
+  <span class='id request_signature'>request_signature</span> <span class='op'>=</span> <span class='id build_request_signature'>build_request_signature</span><span class='lparen'>(</span><span class='id req'>req</span><span class='rparen'>)</span>
+
+  <span class='const'>WebMock</span><span class='op'>::</span><span class='const'>RequestRegistry</span><span class='period'>.</span><span class='id instance'>instance</span><span class='period'>.</span><span class='id requested_signatures'>requested_signatures</span><span class='period'>.</span><span class='id put'>put</span><span class='lparen'>(</span><span class='id request_signature'>request_signature</span><span class='rparen'>)</span>
+
+  <span class='kw'>if</span> <span class='const'>WebMock</span><span class='op'>::</span><span class='const'>StubRegistry</span><span class='period'>.</span><span class='id instance'>instance</span><span class='period'>.</span><span class='id registered_request?'>registered_request?</span><span class='lparen'>(</span><span class='id request_signature'>request_signature</span><span class='rparen'>)</span>
+    <span class='id webmock_response'>webmock_response</span> <span class='op'>=</span> <span class='const'>WebMock</span><span class='op'>::</span><span class='const'>StubRegistry</span><span class='period'>.</span><span class='id instance'>instance</span><span class='period'>.</span><span class='id response_for_request'>response_for_request</span><span class='lparen'>(</span><span class='id request_signature'>request_signature</span><span class='rparen'>)</span>
+    <span class='id handle_file_name'>handle_file_name</span><span class='lparen'>(</span><span class='id req'>req</span><span class='comma'>,</span> <span class='id webmock_response'>webmock_response</span><span class='rparen'>)</span>
+    <span class='id res'>res</span> <span class='op'>=</span> <span class='id build_patron_response'>build_patron_response</span><span class='lparen'>(</span><span class='id webmock_response'>webmock_response</span><span class='rparen'>)</span>
+    <span class='const'>WebMock</span><span class='op'>::</span><span class='const'>CallbackRegistry</span><span class='period'>.</span><span class='id invoke_callbacks'>invoke_callbacks</span><span class='lparen'>(</span>
+      <span class='lbrace'>{</span><span class='symbol'>:lib</span> <span class='op'>=&gt;</span> <span class='symbol'>:patron</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='id request_signature'>request_signature</span><span class='comma'>,</span> <span class='id webmock_response'>webmock_response</span><span class='rparen'>)</span>
+    <span class='id res'>res</span>
+  <span class='kw'>elsif</span> <span class='const'>WebMock</span><span class='period'>.</span><span class='id net_connect_allowed?'>net_connect_allowed?</span><span class='lparen'>(</span><span class='id request_signature'>request_signature</span><span class='period'>.</span><span class='id uri'>uri</span><span class='rparen'>)</span>
+    <span class='id res'>res</span> <span class='op'>=</span> <span class='id handle_request_without_webmock'>handle_request_without_webmock</span><span class='lparen'>(</span><span class='id req'>req</span><span class='rparen'>)</span>
+    <span class='kw'>if</span> <span class='const'>WebMock</span><span class='op'>::</span><span class='const'>CallbackRegistry</span><span class='period'>.</span><span class='id any_callbacks?'>any_callbacks?</span>
+      <span class='id webmock_response'>webmock_response</span> <span class='op'>=</span> <span class='id build_webmock_response'>build_webmock_response</span><span class='lparen'>(</span><span class='id res'>res</span><span class='rparen'>)</span>
+      <span class='const'>WebMock</span><span class='op'>::</span><span class='const'>CallbackRegistry</span><span class='period'>.</span><span class='id invoke_callbacks'>invoke_callbacks</span><span class='lparen'>(</span>
+        <span class='lbrace'>{</span><span class='symbol'>:lib</span> <span class='op'>=&gt;</span> <span class='symbol'>:patron</span><span class='comma'>,</span> <span class='symbol'>:real_request</span> <span class='op'>=&gt;</span> <span class='kw'>true</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='id request_signature'>request_signature</span><span class='comma'>,</span>
+          <span class='id webmock_response'>webmock_response</span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
+    <span class='id res'>res</span>
+  <span class='kw'>else</span>
+    <span class='id raise'>raise</span> <span class='const'>WebMock</span><span class='op'>::</span><span class='const'>NetConnectNotAllowedError</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='id request_signature'>request_signature</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+    
+    <div id="footer">
+  Generated on Sun Jul  3 13:12:23 2011 by 
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.7.2 (ruby-1.9.2).
+</div>
+
+  </body>
+</html>

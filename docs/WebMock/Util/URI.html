@@ -1,0 +1,523 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: WebMock::Util::URI
+  
+    &mdash; Documentation by YARD 0.7.2
+  
+</title>
+
+  <link rel="stylesheet" href="../../css/style.css" type="text/css" media="screen" charset="utf-8" />
+
+  <link rel="stylesheet" href="../../css/common.css" type="text/css" media="screen" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  relpath = '../..';
+  if (relpath != '') relpath += '/';
+</script>
+
+  <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+    
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../../_index.html">Index (U)</a> &raquo; 
+    <span class='title'><span class='object_link'><a href="../../WebMock.html" title="WebMock (module)">WebMock</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../Util.html" title="WebMock::Util (module)">Util</a></span></span>
+     &raquo; 
+    <span class="title">URI</span>
+  
+  
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a id="class_list_link" href="#">Class List</a>
+  
+    <a id="method_list_link" href="#">Method List</a>
+  
+    <a id="file_list_link" href="#">File List</a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+    
+    <iframe id="search_frame"></iframe>
+    
+    <div id="content"><h1>Class: WebMock::Util::URI
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName">Object</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">WebMock::Util::URI</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">lib/web_mock/util/uri.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+
+  <h2>Constant Summary</h2>
+  
+    <dl class="constants">
+      
+        <dt id="ADDRESSABLE_URIS-constant" class="">ADDRESSABLE_URIS =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>Hash</span><span class='period'>.</span><span class='id new'>new</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id hash'>hash</span><span class='comma'>,</span> <span class='id key'>key</span><span class='op'>|</span>
+  <span class='id hash'>hash</span><span class='lbracket'>[</span><span class='id key'>key</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='const'>Addressable</span><span class='op'>::</span><span class='const'>URI</span><span class='period'>.</span><span class='id heuristic_parse'>heuristic_parse</span><span class='lparen'>(</span><span class='id key'>key</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre></dd>
+      
+        <dt id="NORMALIZED_URIS-constant" class="">NORMALIZED_URIS =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>Hash</span><span class='period'>.</span><span class='id new'>new</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id hash'>hash</span><span class='comma'>,</span> <span class='id uri'>uri</span><span class='op'>|</span>
+  <span class='id normalized_uri'>normalized_uri</span> <span class='op'>=</span> <span class='const'>WebMock</span><span class='op'>::</span><span class='const'>Util</span><span class='op'>::</span><span class='const'>URI</span><span class='period'>.</span><span class='id heuristic_parse'>heuristic_parse</span><span class='lparen'>(</span><span class='id uri'>uri</span><span class='rparen'>)</span>
+  <span class='id normalized_uri'>normalized_uri</span><span class='period'>.</span><span class='id query_values'>query_values</span> <span class='op'>=</span> <span class='id sort_query_values'>sort_query_values</span><span class='lparen'>(</span><span class='id normalized_uri'>normalized_uri</span><span class='period'>.</span><span class='id query_values'>query_values</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id normalized_uri'>normalized_uri</span><span class='period'>.</span><span class='id query_values'>query_values</span>
+  <span class='id normalized_uri'>normalized_uri</span> <span class='op'>=</span> <span class='id normalized_uri'>normalized_uri</span><span class='period'>.</span><span class='id normalize'>normalize</span> <span class='comment'>#normalize! is slower
+</span>  <span class='id normalized_uri'>normalized_uri</span><span class='period'>.</span><span class='id port'>port</span> <span class='op'>=</span> <span class='id normalized_uri'>normalized_uri</span><span class='period'>.</span><span class='id inferred_port'>inferred_port</span> <span class='kw'>unless</span> <span class='id normalized_uri'>normalized_uri</span><span class='period'>.</span><span class='id port'>port</span>
+  <span class='id hash'>hash</span><span class='lbracket'>[</span><span class='id uri'>uri</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id normalized_uri'>normalized_uri</span>
+<span class='kw'>end</span></pre></dd>
+      
+    </dl>
+  
+
+
+
+
+
+  
+    <h2>
+      Class Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#encode_unsafe_chars_in_userinfo-class_method" title="encode_unsafe_chars_in_userinfo (class method)">+ (Object) <strong>encode_unsafe_chars_in_userinfo</strong>(userinfo) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#heuristic_parse-class_method" title="heuristic_parse (class method)">+ (Object) <strong>heuristic_parse</strong>(uri) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#is_uri_localhost%3F-class_method" title="is_uri_localhost? (class method)">+ (Boolean) <strong>is_uri_localhost?</strong>(uri) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#normalize_uri-class_method" title="normalize_uri (class method)">+ (Object) <strong>normalize_uri</strong>(uri) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#strip_default_port_from_uri_string-class_method" title="strip_default_port_from_uri_string (class method)">+ (Object) <strong>strip_default_port_from_uri_string</strong>(uri_string) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#variations_of_uri_as_strings-class_method" title="variations_of_uri_as_strings (class method)">+ (Object) <strong>variations_of_uri_as_strings</strong>(uri_object) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+    
+    
+      <div class="method_details first">
+  <p class="signature first" id="encode_unsafe_chars_in_userinfo-class_method">
+  
+    + (<tt>Object</tt>) <strong>encode_unsafe_chars_in_userinfo</strong>(userinfo) 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+65
+66
+67</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/web_mock/util/uri.rb', line 65</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id encode_unsafe_chars_in_userinfo'>encode_unsafe_chars_in_userinfo</span><span class='lparen'>(</span><span class='id userinfo'>userinfo</span><span class='rparen'>)</span>
+  <span class='const'>Addressable</span><span class='op'>::</span><span class='const'>URI</span><span class='period'>.</span><span class='id encode_component'>encode_component</span><span class='lparen'>(</span><span class='id userinfo'>userinfo</span><span class='comma'>,</span> <span class='const'>Addressable</span><span class='op'>::</span><span class='const'>URI</span><span class='op'>::</span><span class='const'>CharacterClasses</span><span class='op'>::</span><span class='const'>USERINFO</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="heuristic_parse-class_method">
+  
+    + (<tt>Object</tt>) <strong>heuristic_parse</strong>(uri) 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+26
+27
+28</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/web_mock/util/uri.rb', line 26</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id heuristic_parse'>heuristic_parse</span><span class='lparen'>(</span><span class='id uri'>uri</span><span class='rparen'>)</span>
+  <span class='const'>ADDRESSABLE_URIS</span><span class='lbracket'>[</span><span class='id uri'>uri</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id dup'>dup</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="is_uri_localhost?-class_method">
+  
+    + (<tt>Boolean</tt>) <strong>is_uri_localhost?</strong>(uri) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+69
+70
+71
+72</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/web_mock/util/uri.rb', line 69</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id is_uri_localhost?'>is_uri_localhost?</span><span class='lparen'>(</span><span class='id uri'>uri</span><span class='rparen'>)</span>
+  <span class='id uri'>uri</span><span class='period'>.</span><span class='id is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Addressable</span><span class='op'>::</span><span class='const'>URI</span><span class='rparen'>)</span> <span class='op'>&amp;&amp;</span>
+  <span class='qwords_beg'>%w(</span><span class='tstring_content'>localhost</span><span class='words_sep'> </span><span class='tstring_content'>127.0.0.1</span><span class='words_sep'> </span><span class='tstring_content'>0.0.0.0</span><span class='words_sep'>)</span><span class='period'>.</span><span class='id include?'>include?</span><span class='lparen'>(</span><span class='id uri'>uri</span><span class='period'>.</span><span class='id host'>host</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="normalize_uri-class_method">
+  
+    + (<tt>Object</tt>) <strong>normalize_uri</strong>(uri) 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+30
+31
+32
+33
+34</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/web_mock/util/uri.rb', line 30</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id normalize_uri'>normalize_uri</span><span class='lparen'>(</span><span class='id uri'>uri</span><span class='rparen'>)</span>
+  <span class='kw'>return</span> <span class='id uri'>uri</span> <span class='kw'>if</span> <span class='id uri'>uri</span><span class='period'>.</span><span class='id is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Regexp</span><span class='rparen'>)</span>
+  <span class='id uri'>uri</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>http://</span><span class='tstring_end'>'</span></span> <span class='op'>+</span> <span class='id uri'>uri</span> <span class='kw'>unless</span> <span class='id uri'>uri</span><span class='period'>.</span><span class='id match'>match</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>^https?://</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id uri'>uri</span><span class='period'>.</span><span class='id is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>String</span><span class='rparen'>)</span>
+  <span class='const'>NORMALIZED_URIS</span><span class='lbracket'>[</span><span class='id uri'>uri</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id dup'>dup</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="strip_default_port_from_uri_string-class_method">
+  
+    + (<tt>Object</tt>) <strong>strip_default_port_from_uri_string</strong>(uri_string) 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+57
+58
+59
+60
+61
+62
+63</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/web_mock/util/uri.rb', line 57</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id strip_default_port_from_uri_string'>strip_default_port_from_uri_string</span><span class='lparen'>(</span><span class='id uri_string'>uri_string</span><span class='rparen'>)</span>
+  <span class='kw'>case</span> <span class='id uri_string'>uri_string</span>
+  <span class='kw'>when</span> <span class='tstring'><span class='regexp_beg'>%r{</span><span class='tstring_content'>^http://</span><span class='regexp_end'>}</span></span>  <span class='kw'>then</span> <span class='id uri_string'>uri_string</span><span class='period'>.</span><span class='id sub'>sub</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>%r{</span><span class='tstring_content'>:80(/|$)</span><span class='regexp_end'>}</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>\1</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='kw'>when</span> <span class='tstring'><span class='regexp_beg'>%r{</span><span class='tstring_content'>^https://</span><span class='regexp_end'>}</span></span> <span class='kw'>then</span> <span class='id uri_string'>uri_string</span><span class='period'>.</span><span class='id sub'>sub</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>%r{</span><span class='tstring_content'>:443(/|$)</span><span class='regexp_end'>}</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>\1</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='kw'>else</span> <span class='id uri_string'>uri_string</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="variations_of_uri_as_strings-class_method">
+  
+    + (<tt>Object</tt>) <strong>variations_of_uri_as_strings</strong>(uri_object) 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/web_mock/util/uri.rb', line 36</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id variations_of_uri_as_strings'>variations_of_uri_as_strings</span><span class='lparen'>(</span><span class='id uri_object'>uri_object</span><span class='rparen'>)</span>
+  <span class='id normalized_uri'>normalized_uri</span> <span class='op'>=</span> <span class='id normalize_uri'>normalize_uri</span><span class='lparen'>(</span><span class='id uri_object'>uri_object</span><span class='period'>.</span><span class='id dup'>dup</span><span class='rparen'>)</span><span class='period'>.</span><span class='id freeze'>freeze</span>
+  <span class='id uris'>uris</span> <span class='op'>=</span> <span class='lbracket'>[</span> <span class='id normalized_uri'>normalized_uri</span> <span class='rbracket'>]</span>
+
+  <span class='kw'>if</span> <span class='id normalized_uri'>normalized_uri</span><span class='period'>.</span><span class='id path'>path</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>/</span><span class='tstring_end'>'</span></span>
+    <span class='id uris'>uris</span> <span class='op'>=</span> <span class='id uris_with_trailing_slash_and_without'>uris_with_trailing_slash_and_without</span><span class='lparen'>(</span><span class='id uris'>uris</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+
+  <span class='id uris'>uris</span> <span class='op'>=</span> <span class='id uris_encoded_and_unencoded'>uris_encoded_and_unencoded</span><span class='lparen'>(</span><span class='id uris'>uris</span><span class='rparen'>)</span>
+
+  <span class='kw'>if</span> <span class='id normalized_uri'>normalized_uri</span><span class='period'>.</span><span class='id port'>port</span> <span class='op'>==</span> <span class='const'>Addressable</span><span class='op'>::</span><span class='const'>URI</span><span class='period'>.</span><span class='id port_mapping'>port_mapping</span><span class='lbracket'>[</span><span class='id normalized_uri'>normalized_uri</span><span class='period'>.</span><span class='id scheme'>scheme</span><span class='rbracket'>]</span>
+    <span class='id uris'>uris</span> <span class='op'>=</span> <span class='id uris_with_inferred_port_and_without'>uris_with_inferred_port_and_without</span><span class='lparen'>(</span><span class='id uris'>uris</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+
+  <span class='kw'>if</span> <span class='id normalized_uri'>normalized_uri</span><span class='period'>.</span><span class='id scheme'>scheme</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>http</span><span class='tstring_end'>&quot;</span></span>
+    <span class='id uris'>uris</span> <span class='op'>=</span> <span class='id uris_with_scheme_and_without'>uris_with_scheme_and_without</span><span class='lparen'>(</span><span class='id uris'>uris</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+
+  <span class='id uris'>uris</span><span class='period'>.</span><span class='id map'>map</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id uri'>uri</span><span class='op'>|</span> <span class='id uri'>uri</span><span class='period'>.</span><span class='id to_s'>to_s</span><span class='period'>.</span><span class='id gsub'>gsub</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^\/\/</span><span class='regexp_end'>/</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span> <span class='rbrace'>}</span><span class='period'>.</span><span class='id uniq'>uniq</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+    
+    <div id="footer">
+  Generated on Sun Jul  3 13:12:23 2011 by 
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.7.2 (ruby-1.9.2).
+</div>
+
+  </body>
+</html>

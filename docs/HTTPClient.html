@@ -1,0 +1,512 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: HTTPClient
+  
+    &mdash; Documentation by YARD 0.7.2
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  relpath = '';
+  if (relpath != '') relpath += '/';
+</script>
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+    
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index (H)</a> &raquo; 
+    
+    
+    <span class="title">HTTPClient</span>
+  
+  
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a id="class_list_link" href="#">Class List</a>
+  
+    <a id="method_list_link" href="#">Method List</a>
+  
+    <a id="file_list_link" href="#">File List</a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+    
+    <iframe id="search_frame"></iframe>
+    
+    <div id="content"><h1>Class: HTTPClient
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName">Object</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">HTTPClient</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">lib/web_mock/adapters/httpclient.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#build_httpclient_response-instance_method" title="#build_httpclient_response (instance method)">- (Object) <strong>build_httpclient_response</strong>(webmock_response, stream = false, &amp;block) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#do_get_block_with_webmock-instance_method" title="#do_get_block_with_webmock (instance method)">- (Object) <strong>do_get_block_with_webmock</strong>(req, proxy, conn, &amp;block) </a>
+    
+
+    
+      (also: #do_get_block)
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#do_get_stream_with_webmock-instance_method" title="#do_get_stream_with_webmock (instance method)">- (Object) <strong>do_get_stream_with_webmock</strong>(req, proxy, conn, &amp;block) </a>
+    
+
+    
+      (also: #do_get_stream)
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#do_get_with_webmock-instance_method" title="#do_get_with_webmock (instance method)">- (Object) <strong>do_get_with_webmock</strong>(req, proxy, conn, stream = false, &amp;block) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#do_request_async_with_webmock-instance_method" title="#do_request_async_with_webmock (instance method)">- (Object) <strong>do_request_async_with_webmock</strong>(method, uri, query, body, extheader) </a>
+    
+
+    
+      (also: #do_request_async)
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+    
+    
+      <div class="method_details first">
+  <p class="signature first" id="build_httpclient_response-instance_method">
+  
+    - (<tt>Object</tt>) <strong>build_httpclient_response</strong>(webmock_response, stream = false, &amp;block) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Raises:</h3>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>HTTPClient::TimeoutError</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/web_mock/adapters/httpclient.rb', line 68</span>
+
+<span class='kw'>def</span> <span class='id build_httpclient_response'>build_httpclient_response</span><span class='lparen'>(</span><span class='id webmock_response'>webmock_response</span><span class='comma'>,</span> <span class='id stream'>stream</span> <span class='op'>=</span> <span class='kw'>false</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id block'>block</span><span class='rparen'>)</span>
+  <span class='id body'>body</span> <span class='op'>=</span> <span class='id stream'>stream</span> <span class='op'>?</span> <span class='const'>StringIO</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='id webmock_response'>webmock_response</span><span class='period'>.</span><span class='id body'>body</span><span class='rparen'>)</span> <span class='op'>:</span> <span class='id webmock_response'>webmock_response</span><span class='period'>.</span><span class='id body'>body</span>
+  <span class='id response'>response</span> <span class='op'>=</span> <span class='const'>HTTP</span><span class='op'>::</span><span class='const'>Message</span><span class='period'>.</span><span class='id new_response'>new_response</span><span class='lparen'>(</span><span class='id body'>body</span><span class='rparen'>)</span>
+  <span class='id response'>response</span><span class='period'>.</span><span class='id header'>header</span><span class='period'>.</span><span class='id init_response'>init_response</span><span class='lparen'>(</span><span class='id webmock_response'>webmock_response</span><span class='period'>.</span><span class='id status'>status</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+  <span class='id response'>response</span><span class='period'>.</span><span class='id reason'>reason</span><span class='op'>=</span><span class='id webmock_response'>webmock_response</span><span class='period'>.</span><span class='id status'>status</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span>
+  <span class='id webmock_response'>webmock_response</span><span class='period'>.</span><span class='id headers'>headers</span><span class='period'>.</span><span class='id to_a'>to_a</span><span class='period'>.</span><span class='id each'>each</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id name'>name</span><span class='comma'>,</span> <span class='id value'>value</span><span class='op'>|</span> <span class='id response'>response</span><span class='period'>.</span><span class='id header'>header</span><span class='period'>.</span><span class='id set'>set</span><span class='lparen'>(</span><span class='id name'>name</span><span class='comma'>,</span> <span class='id value'>value</span><span class='rparen'>)</span> <span class='rbrace'>}</span>
+
+  <span class='id raise'>raise</span> <span class='const'>HTTPClient</span><span class='op'>::</span><span class='const'>TimeoutError</span> <span class='kw'>if</span> <span class='id webmock_response'>webmock_response</span><span class='period'>.</span><span class='id should_timeout'>should_timeout</span>
+  <span class='id webmock_response'>webmock_response</span><span class='period'>.</span><span class='id raise_error_if_any'>raise_error_if_any</span>
+
+  <span class='id block'>block</span><span class='period'>.</span><span class='id call'>call</span><span class='lparen'>(</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id body'>body</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id block'>block</span>
+
+  <span class='id response'>response</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="do_get_block_with_webmock-instance_method">
+  
+    - (<tt>Object</tt>) <strong>do_get_block_with_webmock</strong>(req, proxy, conn, &amp;block) 
+  
+
+  
+    <span class="aliases">Also known as:
+    <span class="names"><span id='do_get_block-instance_method'>do_get_block</span></span>
+    </span>
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+7
+8
+9</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/web_mock/adapters/httpclient.rb', line 7</span>
+
+<span class='kw'>def</span> <span class='id do_get_block_with_webmock'>do_get_block_with_webmock</span><span class='lparen'>(</span><span class='id req'>req</span><span class='comma'>,</span> <span class='id proxy'>proxy</span><span class='comma'>,</span> <span class='id conn'>conn</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id block'>block</span><span class='rparen'>)</span>
+  <span class='id do_get_with_webmock'>do_get_with_webmock</span><span class='lparen'>(</span><span class='id req'>req</span><span class='comma'>,</span> <span class='id proxy'>proxy</span><span class='comma'>,</span> <span class='id conn'>conn</span><span class='comma'>,</span> <span class='kw'>false</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id block'>block</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="do_get_stream_with_webmock-instance_method">
+  
+    - (<tt>Object</tt>) <strong>do_get_stream_with_webmock</strong>(req, proxy, conn, &amp;block) 
+  
+
+  
+    <span class="aliases">Also known as:
+    <span class="names"><span id='do_get_stream-instance_method'>do_get_stream</span></span>
+    </span>
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+11
+12
+13</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/web_mock/adapters/httpclient.rb', line 11</span>
+
+<span class='kw'>def</span> <span class='id do_get_stream_with_webmock'>do_get_stream_with_webmock</span><span class='lparen'>(</span><span class='id req'>req</span><span class='comma'>,</span> <span class='id proxy'>proxy</span><span class='comma'>,</span> <span class='id conn'>conn</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id block'>block</span><span class='rparen'>)</span>
+  <span class='id do_get_with_webmock'>do_get_with_webmock</span><span class='lparen'>(</span><span class='id req'>req</span><span class='comma'>,</span> <span class='id proxy'>proxy</span><span class='comma'>,</span> <span class='id conn'>conn</span><span class='comma'>,</span> <span class='kw'>true</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id block'>block</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="do_get_with_webmock-instance_method">
+  
+    - (<tt>Object</tt>) <strong>do_get_with_webmock</strong>(req, proxy, conn, stream = false, &amp;block) 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/web_mock/adapters/httpclient.rb', line 15</span>
+
+<span class='kw'>def</span> <span class='id do_get_with_webmock'>do_get_with_webmock</span><span class='lparen'>(</span><span class='id req'>req</span><span class='comma'>,</span> <span class='id proxy'>proxy</span><span class='comma'>,</span> <span class='id conn'>conn</span><span class='comma'>,</span> <span class='id stream'>stream</span> <span class='op'>=</span> <span class='kw'>false</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id block'>block</span><span class='rparen'>)</span>
+  <span class='id request_signature'>request_signature</span> <span class='op'>=</span> <span class='id build_request_signature'>build_request_signature</span><span class='lparen'>(</span><span class='id req'>req</span><span class='rparen'>)</span>
+
+  <span class='const'>WebMock</span><span class='op'>::</span><span class='const'>RequestRegistry</span><span class='period'>.</span><span class='id instance'>instance</span><span class='period'>.</span><span class='id requested_signatures'>requested_signatures</span><span class='period'>.</span><span class='id put'>put</span><span class='lparen'>(</span><span class='id request_signature'>request_signature</span><span class='rparen'>)</span>
+
+  <span class='kw'>if</span> <span class='const'>WebMock</span><span class='op'>::</span><span class='const'>StubRegistry</span><span class='period'>.</span><span class='id instance'>instance</span><span class='period'>.</span><span class='id registered_request?'>registered_request?</span><span class='lparen'>(</span><span class='id request_signature'>request_signature</span><span class='rparen'>)</span>
+    <span class='id webmock_response'>webmock_response</span> <span class='op'>=</span> <span class='const'>WebMock</span><span class='op'>::</span><span class='const'>StubRegistry</span><span class='period'>.</span><span class='id instance'>instance</span><span class='period'>.</span><span class='id response_for_request'>response_for_request</span><span class='lparen'>(</span><span class='id request_signature'>request_signature</span><span class='rparen'>)</span>
+    <span class='id response'>response</span> <span class='op'>=</span> <span class='id build_httpclient_response'>build_httpclient_response</span><span class='lparen'>(</span><span class='id webmock_response'>webmock_response</span><span class='comma'>,</span> <span class='id stream'>stream</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id block'>block</span><span class='rparen'>)</span>
+    <span class='id res'>res</span> <span class='op'>=</span> <span class='id conn'>conn</span><span class='period'>.</span><span class='id push'>push</span><span class='lparen'>(</span><span class='id response'>response</span><span class='rparen'>)</span>
+    <span class='const'>WebMock</span><span class='op'>::</span><span class='const'>CallbackRegistry</span><span class='period'>.</span><span class='id invoke_callbacks'>invoke_callbacks</span><span class='lparen'>(</span>
+      <span class='lbrace'>{</span><span class='symbol'>:lib</span> <span class='op'>=&gt;</span> <span class='symbol'>:http_client</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='id request_signature'>request_signature</span><span class='comma'>,</span> <span class='id webmock_response'>webmock_response</span><span class='rparen'>)</span>
+    <span class='id res'>res</span>
+  <span class='kw'>elsif</span> <span class='const'>WebMock</span><span class='period'>.</span><span class='id net_connect_allowed?'>net_connect_allowed?</span><span class='lparen'>(</span><span class='id request_signature'>request_signature</span><span class='period'>.</span><span class='id uri'>uri</span><span class='rparen'>)</span>
+    <span class='id res'>res</span> <span class='op'>=</span> <span class='kw'>if</span> <span class='id stream'>stream</span>
+      <span class='id do_get_stream_without_webmock'>do_get_stream_without_webmock</span><span class='lparen'>(</span><span class='id req'>req</span><span class='comma'>,</span> <span class='id proxy'>proxy</span><span class='comma'>,</span> <span class='id conn'>conn</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id block'>block</span><span class='rparen'>)</span>
+    <span class='kw'>else</span>
+      <span class='id do_get_block_without_webmock'>do_get_block_without_webmock</span><span class='lparen'>(</span><span class='id req'>req</span><span class='comma'>,</span> <span class='id proxy'>proxy</span><span class='comma'>,</span> <span class='id conn'>conn</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id block'>block</span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
+    <span class='id res'>res</span> <span class='op'>=</span> <span class='id conn'>conn</span><span class='period'>.</span><span class='id pop'>pop</span>
+    <span class='id conn'>conn</span><span class='period'>.</span><span class='id push'>push</span><span class='lparen'>(</span><span class='id res'>res</span><span class='rparen'>)</span>
+    <span class='kw'>if</span> <span class='const'>WebMock</span><span class='op'>::</span><span class='const'>CallbackRegistry</span><span class='period'>.</span><span class='id any_callbacks?'>any_callbacks?</span>
+      <span class='id webmock_response'>webmock_response</span> <span class='op'>=</span> <span class='id build_webmock_response'>build_webmock_response</span><span class='lparen'>(</span><span class='id res'>res</span><span class='rparen'>)</span>
+      <span class='const'>WebMock</span><span class='op'>::</span><span class='const'>CallbackRegistry</span><span class='period'>.</span><span class='id invoke_callbacks'>invoke_callbacks</span><span class='lparen'>(</span>
+        <span class='lbrace'>{</span><span class='symbol'>:lib</span> <span class='op'>=&gt;</span> <span class='symbol'>:http_client</span><span class='comma'>,</span> <span class='symbol'>:real_request</span> <span class='op'>=&gt;</span> <span class='kw'>true</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='id request_signature'>request_signature</span><span class='comma'>,</span>
+        <span class='id webmock_response'>webmock_response</span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
+    <span class='id res'>res</span>
+  <span class='kw'>else</span>
+    <span class='id raise'>raise</span> <span class='const'>WebMock</span><span class='op'>::</span><span class='const'>NetConnectNotAllowedError</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='id request_signature'>request_signature</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="do_request_async_with_webmock-instance_method">
+  
+    - (<tt>Object</tt>) <strong>do_request_async_with_webmock</strong>(method, uri, query, body, extheader) 
+  
+
+  
+    <span class="aliases">Also known as:
+    <span class="names"><span id='do_request_async-instance_method'>do_request_async</span></span>
+    </span>
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/web_mock/adapters/httpclient.rb', line 47</span>
+
+<span class='kw'>def</span> <span class='id do_request_async_with_webmock'>do_request_async_with_webmock</span><span class='lparen'>(</span><span class='id method'>method</span><span class='comma'>,</span> <span class='id uri'>uri</span><span class='comma'>,</span> <span class='id query'>query</span><span class='comma'>,</span> <span class='id body'>body</span><span class='comma'>,</span> <span class='id extheader'>extheader</span><span class='rparen'>)</span>
+  <span class='id req'>req</span> <span class='op'>=</span> <span class='id create_request'>create_request</span><span class='lparen'>(</span><span class='id method'>method</span><span class='comma'>,</span> <span class='id uri'>uri</span><span class='comma'>,</span> <span class='id query'>query</span><span class='comma'>,</span> <span class='id body'>body</span><span class='comma'>,</span> <span class='id extheader'>extheader</span><span class='rparen'>)</span>
+  <span class='id request_signature'>request_signature</span> <span class='op'>=</span> <span class='id build_request_signature'>build_request_signature</span><span class='lparen'>(</span><span class='id req'>req</span><span class='rparen'>)</span>
+
+  <span class='kw'>if</span> <span class='const'>WebMock</span><span class='op'>::</span><span class='const'>StubRegistry</span><span class='period'>.</span><span class='id instance'>instance</span><span class='period'>.</span><span class='id registered_request?'>registered_request?</span><span class='lparen'>(</span><span class='id request_signature'>request_signature</span><span class='rparen'>)</span> <span class='op'>||</span>
+     <span class='const'>WebMock</span><span class='period'>.</span><span class='id net_connect_allowed?'>net_connect_allowed?</span><span class='lparen'>(</span><span class='id request_signature'>request_signature</span><span class='period'>.</span><span class='id uri'>uri</span><span class='rparen'>)</span>
+    <span class='id do_request_async_without_webmock'>do_request_async_without_webmock</span><span class='lparen'>(</span><span class='id method'>method</span><span class='comma'>,</span> <span class='id uri'>uri</span><span class='comma'>,</span> <span class='id query'>query</span><span class='comma'>,</span> <span class='id body'>body</span><span class='comma'>,</span> <span class='id extheader'>extheader</span><span class='rparen'>)</span>
+  <span class='kw'>else</span>
+    <span class='id raise'>raise</span> <span class='const'>WebMock</span><span class='op'>::</span><span class='const'>NetConnectNotAllowedError</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='id request_signature'>request_signature</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+    
+    <div id="footer">
+  Generated on Sun Jul  3 13:12:24 2011 by 
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.7.2 (ruby-1.9.2).
+</div>
+
+  </body>
+</html>

@@ -1,0 +1,618 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Module: WebMock::API
+  
+    &mdash; Documentation by YARD 0.7.2
+  
+</title>
+
+  <link rel="stylesheet" href="../css/style.css" type="text/css" media="screen" charset="utf-8" />
+
+  <link rel="stylesheet" href="../css/common.css" type="text/css" media="screen" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  relpath = '..';
+  if (relpath != '') relpath += '/';
+</script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+    
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../_index.html">Index (A)</a> &raquo; 
+    <span class='title'><span class='object_link'><a href="../WebMock.html" title="WebMock (module)">WebMock</a></span></span>
+     &raquo; 
+    <span class="title">API</span>
+  
+  
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a id="class_list_link" href="#">Class List</a>
+  
+    <a id="method_list_link" href="#">Method List</a>
+  
+    <a id="file_list_link" href="#">File List</a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+    
+    <iframe id="search_frame"></iframe>
+    
+    <div id="content"><h1>Module: WebMock::API
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+  
+    
+      <dt class="r1">Extended by:</dt>
+      <dd class="r1"><span class='object_link'><a href="" title="WebMock::API (module)">API</a></span></dd>
+      
+    
+  
+    
+  
+  
+    <dt class="r2">Included in:</dt>
+    <dd class="r2"><span class='object_link'><a href="../Test/Unit/TestCase.html" title="Test::Unit::TestCase (class)">Test::Unit::TestCase</a></span>, <span class='object_link'><a href="../WebMock.html" title="WebMock (module)">WebMock</a></span>, <span class='object_link'><a href="../WebMock.html" title="WebMock (module)">WebMock</a></span>, <span class='object_link'><a href="" title="WebMock::API (module)">API</a></span></dd>
+    
+  
+  
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">lib/web_mock/api.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    <p>API provides the methods used in any testing framework</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div>
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#a_request-instance_method" title="#a_request (instance method)">- (WebMock::RequestPattern) <strong>a_request</strong>(method, uri) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Create a new request pattern with a method and URI.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#assert_not_requested-instance_method" title="#assert_not_requested (instance method)">- (Object) <strong>assert_not_requested</strong>(method, uri, options = {}) { ... }</a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Assert that a request has not been made.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#assert_requested-instance_method" title="#assert_requested (instance method)">- (Object) <strong>assert_requested</strong>(method, uri, options = {}) { ... }</a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Assert that a request has been made.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#stub_request-instance_method" title="#stub_request (instance method)">- (WebMock::StubRegistry) <strong>stub_request</strong>(method, uri) </a>
+    
+
+    
+      (also: #stub_http_request)
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Register a new stubbed request.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+    
+    
+      <div class="method_details first">
+  <p class="signature first" id="a_request-instance_method">
+  
+    - (<tt><span class='object_link'><a href="RequestPattern.html" title="WebMock::RequestPattern (class)">WebMock::RequestPattern</a></span></tt>) <strong>a_request</strong>(method, uri) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>Create a new request pattern with a method and URI</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>method</span>
+      
+      
+        <span class='type'>(<tt>Symbol</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>an HTTP method or <code>:any</code></p>
+</div>
+      
+    </li>
+  
+</ul>
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="RequestPattern.html" title="WebMock::RequestPattern (class)">WebMock::RequestPattern</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+20
+21
+22</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/web_mock/api.rb', line 20</span>
+
+<span class='kw'>def</span> <span class='id a_request'>a_request</span><span class='lparen'>(</span><span class='id method'>method</span><span class='comma'>,</span> <span class='id uri'>uri</span><span class='rparen'>)</span>
+  <span class='const'>WebMock</span><span class='op'>::</span><span class='const'>RequestPattern</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='id method'>method</span><span class='comma'>,</span> <span class='id uri'>uri</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="assert_not_requested-instance_method">
+  
+    - (<tt>Object</tt>) <strong>assert_not_requested</strong>(method, uri, options = {}) { ... }
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>Assert that a request has not been made</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>method</span>
+      
+      
+        <span class='type'>(<tt>Symbol</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>the HTTP method</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>uri</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>request URI</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>options</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>@option [Hash] :headers
+@option [String] :body</p>
+</div>
+      
+    </li>
+  
+</ul>
+<h3>Yields:</h3>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'><p>block to pass to <span class='object_link'><a href="RequestPattern.html" title="WebMock::RequestPattern (class)">RequestPattern</a></span></p>
+</div>
+      
+    </li>
+  
+</ul>
+<h3>Raises:</h3>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>RuntimeError</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>if a matching request has been made</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+53
+54
+55
+56
+57</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/web_mock/api.rb', line 53</span>
+
+<span class='kw'>def</span> <span class='id assert_not_requested'>assert_not_requested</span><span class='lparen'>(</span><span class='id method'>method</span><span class='comma'>,</span> <span class='id uri'>uri</span><span class='comma'>,</span> <span class='id options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id block'>block</span><span class='rparen'>)</span>
+  <span class='id request'>request</span> <span class='op'>=</span> <span class='const'>WebMock</span><span class='op'>::</span><span class='const'>RequestPattern</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='id method'>method</span><span class='comma'>,</span> <span class='id uri'>uri</span><span class='comma'>,</span> <span class='id options'>options</span><span class='rparen'>)</span><span class='period'>.</span><span class='id with'>with</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='id block'>block</span><span class='rparen'>)</span>
+  <span class='id verifier'>verifier</span> <span class='op'>=</span> <span class='const'>WebMock</span><span class='op'>::</span><span class='const'>RequestExecutionVerifier</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='id request'>request</span><span class='comma'>,</span> <span class='id options'>options</span><span class='period'>.</span><span class='id delete'>delete</span><span class='lparen'>(</span><span class='symbol'>:times</span><span class='rparen'>)</span><span class='rparen'>)</span>
+  <span class='const'>WebMock</span><span class='op'>::</span><span class='const'>AssertionFailure</span><span class='period'>.</span><span class='id failure'>failure</span><span class='lparen'>(</span><span class='id verifier'>verifier</span><span class='period'>.</span><span class='id negative_failure_message'>negative_failure_message</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='id verifier'>verifier</span><span class='period'>.</span><span class='id does_not_match?'>does_not_match?</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="assert_requested-instance_method">
+  
+    - (<tt>Object</tt>) <strong>assert_requested</strong>(method, uri, options = {}) { ... }
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>Assert that a request has been made</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>method</span>
+      
+      
+        <span class='type'>(<tt>Symbol</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>the HTTP method</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>uri</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>request URI</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>options</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>@option [Hash] :headers
+@option [String] :body</p>
+</div>
+      
+    </li>
+  
+</ul>
+<h3>Yields:</h3>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'><p>block to pass to <span class='object_link'><a href="RequestPattern.html" title="WebMock::RequestPattern (class)">RequestPattern</a></span></p>
+</div>
+      
+    </li>
+  
+</ul>
+<h3>Raises:</h3>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>RuntimeError</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>if a matching request has not been made</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+37
+38
+39
+40
+41
+42</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/web_mock/api.rb', line 37</span>
+
+<span class='kw'>def</span> <span class='id assert_requested'>assert_requested</span><span class='lparen'>(</span><span class='id method'>method</span><span class='comma'>,</span> <span class='id uri'>uri</span><span class='comma'>,</span> <span class='id options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id block'>block</span><span class='rparen'>)</span>
+  <span class='id expected_times_executed'>expected_times_executed</span> <span class='op'>=</span> <span class='id options'>options</span><span class='period'>.</span><span class='id delete'>delete</span><span class='lparen'>(</span><span class='symbol'>:times</span><span class='rparen'>)</span> <span class='op'>||</span> <span class='int'>1</span>
+  <span class='id request'>request</span> <span class='op'>=</span> <span class='const'>WebMock</span><span class='op'>::</span><span class='const'>RequestPattern</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='id method'>method</span><span class='comma'>,</span> <span class='id uri'>uri</span><span class='comma'>,</span> <span class='id options'>options</span><span class='rparen'>)</span><span class='period'>.</span><span class='id with'>with</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='id block'>block</span><span class='rparen'>)</span>
+  <span class='id verifier'>verifier</span> <span class='op'>=</span> <span class='const'>WebMock</span><span class='op'>::</span><span class='const'>RequestExecutionVerifier</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='id request'>request</span><span class='comma'>,</span> <span class='id expected_times_executed'>expected_times_executed</span><span class='rparen'>)</span>
+  <span class='const'>WebMock</span><span class='op'>::</span><span class='const'>AssertionFailure</span><span class='period'>.</span><span class='id failure'>failure</span><span class='lparen'>(</span><span class='id verifier'>verifier</span><span class='period'>.</span><span class='id failure_message'>failure_message</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='id verifier'>verifier</span><span class='period'>.</span><span class='id matches?'>matches?</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="stub_request-instance_method">
+  
+    - (<tt><span class='object_link'><a href="StubRegistry.html" title="WebMock::StubRegistry (class)">WebMock::StubRegistry</a></span></tt>) <strong>stub_request</strong>(method, uri) 
+  
+
+  
+    <span class="aliases">Also known as:
+    <span class="names"><span id='stub_http_request-instance_method'>stub_http_request</span></span>
+    </span>
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>Register a new stubbed request</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>method</span>
+      
+      
+        <span class='type'>(<tt>Symbol</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>an HTTP method or <code>:any</code></p>
+</div>
+      
+    </li>
+  
+</ul>
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="StubRegistry.html" title="WebMock::StubRegistry (class)">WebMock::StubRegistry</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+10
+11
+12</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/web_mock/api.rb', line 10</span>
+
+<span class='kw'>def</span> <span class='id stub_request'>stub_request</span><span class='lparen'>(</span><span class='id method'>method</span><span class='comma'>,</span> <span class='id uri'>uri</span><span class='rparen'>)</span>
+  <span class='const'>WebMock</span><span class='op'>::</span><span class='const'>StubRegistry</span><span class='period'>.</span><span class='id instance'>instance</span><span class='period'>.</span><span class='id register_request_stub'>register_request_stub</span><span class='lparen'>(</span><span class='const'>WebMock</span><span class='op'>::</span><span class='const'>RequestStub</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='id method'>method</span><span class='comma'>,</span> <span class='id uri'>uri</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+    
+    <div id="footer">
+  Generated on Sun Jul  3 13:12:23 2011 by 
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.7.2 (ruby-1.9.2).
+</div>
+
+  </body>
+</html>
