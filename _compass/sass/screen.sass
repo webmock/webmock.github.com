@@ -1,0 +1,51 @@
+@import "compass/reset"
+@import "compass/css3"
+@import "compass/typography/lists"
+@import "blueprint"
+@import "blueprint/grid"
+
+body
+  +blueprint(true)
+  background-color: #fff
+  margin: 0
+  padding: 0
+  font: 16px/24px 'helvetica neue', helvetica, sans-serif
+  color: #444
+
+#container
+  +container
+
+article
+  +column(24, true)
+  margin-top: 40px
+  background-color: #fff
+  width: 900px
+  margin: 0 auto
+
+header
+  +column(24, true)
+  margin-top: 20px
+
+  h1
+    font-size: 48px
+    font-weight: bold
+    line-height: 50px
+    color: #37b2c9
+    text-shadow: 2px 2px 8px rgba(#000, 0.2)
+
+    a
+      text-decoration: none
+
+nav
+  +column(24, true)
+  background-color: #eee
+  border: 1px solid #ccc
+  margin-bottom: 20px
+  +border-radius
+
+  ul
+    +inline-list
+
+    li
+      margin: 0 5px
+      padding: 5px
