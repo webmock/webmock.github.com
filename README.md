@@ -8,7 +8,7 @@
 
 #### Run Jekyll
 
-  jekyll --auto --server
+    jekyll --auto --server
 
 #### Start up Compass to generate CSS
 
