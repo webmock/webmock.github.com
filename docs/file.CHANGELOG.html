@@ -1,0 +1,530 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>
+  File: CHANGELOG
+  
+    &mdash; Documentation by YARD 0.7.2
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  relpath = '';
+  if (relpath != '') relpath += '/';
+</script>
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+    
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html" title="Index">Index</a> &raquo; 
+    <span class="title">File: CHANGELOG</span>
+  
+  
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a id="class_list_link" href="#">Class List</a>
+  
+    <a id="method_list_link" href="#">Method List</a>
+  
+    <a id="file_list_link" href="#">File List</a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+    
+    <iframe id="search_frame"></iframe>
+    
+    <div id="content"><div id='filecontents'><h1>Changelog</h1>
+
+<h2>1.6.4</h2>
+
+<p>This is a quick slip release to regenerate the gemspec. Apparently
+jeweler inserts dependencies twice if you use the <code>gemspec</code> method in
+your Gemfile and declare gem dependencies in your gemspec.</p>
+
+<p><a href="https://github.com/technicalpickles/jeweler/issues/154">https://github.com/technicalpickles/jeweler/issues/154</a></p>
+
+<p>josevalim:</p>
+
+<blockquote><p>This just bit me. I just released a gem with the wrong dependencies
+because I have updated jeweler. This should have been opt-in,
+otherwise a bunch of people using jeweler are going to release gems
+with the wrong dependencies because you are automatically importing
+from the Gemfile.</p></blockquote>
+
+<h2>1.6.3</h2>
+
+<ul>
+<li><p>Update the dependency on addressable to get around an issue in v2.2.5.
+Thanks to <a href="https://github.com/phiggins">Peter Higgins</a>.</p></li>
+<li><p>Add support for matching parameter values using a regular expression
+as well as a string. Thanks to <a href="https://github.com/oleg">Oleg M Prozorov</a>.</p></li>
+<li><p>Fix integration with httpclient as the internal API has changed.
+Thanks to <a href="https://github.com/endor">Frank Prößdorf</a>.</p></li>
+<li><p>Ensure Curl::Easy#content_type is always set. Thanks to <a href="https://github.com/phiggins">Peter
+Higgins</a>.</p></li>
+<li><p>Fix bug with em-http-request adapter stubbing responses that have a
+chunked transfer encoding. Thanks to <a href="https://github.com/myronmarston">Myron
+Marston</a>.</p></li>
+<li><p>Fix a load of spec failures with Patron, httpclient, and specs that
+depended on the behaviour of example.com. Thanks to <a href="https://github.com/grig">Alex
+Grigorovich</a>.</p></li>
+</ul>
+
+
+<h2>1.6.2</h2>
+
+<ul>
+<li><p>Em-http-request adapter sets <code>last_effective_url</code> property. Thanks to <a href="https://github.com/samstokes">Sam Stokes</a>.</p></li>
+<li><p>Curb adapter supports <code>Curb::Easy#http_post</code> and <code>Curb::Easy#http_put</code> without arguments (by setting <code>post_body</code> or <code>put_data</code> beforehand). Thanks to <a href="https://github.com/eugenebolshakov">Eugene Bolshakov</a></p></li>
+</ul>
+
+
+<h2>1.6.1</h2>
+
+<ul>
+<li>Fixed issue with <code>webmock/rspec</code> which didn't load correctly if <code>rspec/core</code> was already required but <code>rspec/expectations</code> not.</li>
+</ul>
+
+
+<h2>1.6.0</h2>
+
+<ul>
+<li><p>Simplified integration with Test::Unit, RSpec and Cucumber. Now only a single file has to be required i.e.</p>
+
+<pre class="code">          <span class='id require'>require</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>webmock/test_unit</span><span class='tstring_end'>'</span></span>
+          <span class='id require'>require</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>webmock/rspec</span><span class='tstring_end'>'</span></span>
+          <span class='id require'>require</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>webmock/cucumber</span><span class='tstring_end'>'</span></span>
+</pre></li>
+<li><p>The error message on unstubbed request now contains code snippet which can be used to stub this request. Thanks to Martyn Loughran for suggesting this feature.</p></li>
+<li><p>The expectation failure message now contains a list of made requests. Thanks to Martyn Loughran for suggesting this feature.</p></li>
+<li><p>Added <code>WebMock.print_executed_requests</code> method which can be useful to find out what requests were made until a given point.</p></li>
+<li><p>em-http-request adapter is now activated by replacing EventMachine::HttpRequest constant, instead of monkeypatching the original class.</p></li>
+</ul>
+
+
+<p> This technique is borrowed from em-http-request native mocking module. It allows switching WebMock adapter on an off, and using it interchangeably with em-http-request native mocking i.e:</p>
+
+<pre class="code">            EventMachine::WebMockHttpRequest.activate!
+            EventMachine::WebMockHttpRequest.deactivate!
+
+    Thanks to Martyn Loughran for suggesting this feature.
+</pre>
+
+<ul>
+<li><p><code>WebMock.reset_webmock</code> is deprecated in favour of new <code>WebMock.reset!</code></p></li>
+<li><p>Fixed integration with Cucumber. Previously documented example didn't work with new versions of Cucumber.</p></li>
+<li><p>Fixed stubbing requests with body declared as a hash. Thanks to Erik Michaels-Ober for reporting the issue.</p></li>
+<li><p>Fixed issue with em-http-request adapter which didn't work when :query option value was passed as a string, not a hash. Thanks to Chee Yeo for reporting the issue.</p></li>
+<li><p>Fixed problem with assert_requested which didn't work if used outside rspec or test/unit</p></li>
+<li><p>Removed dependency on json gem</p></li>
+</ul>
+
+
+<h2>1.5.0</h2>
+
+<ul>
+<li><p>Support for dynamically evaluated raw responses recorded with <code>curl -is</code> <br/>
+i.e.</p>
+
+<pre class="code">          `curl -is www.example.com &gt; /tmp/www.example.com.txt`
+          stub_request(:get, &quot;www.example.com&quot;).to_return(lambda { |request| File.new(&quot;/tmp/#{request.uri.host.to_s}.txt&quot; }))
+</pre></li>
+<li><p><code>:net_http_connect_on_start</code> option can be passed to <code>WebMock.allow_net_connect!</code> and <code>WebMock.disable_net_connect!</code> methods, i.e.</p>
+
+<pre class="code">          <span class='const'>WebMock</span><span class='period'>.</span><span class='id allow_net_connect!'>allow_net_connect!</span><span class='lparen'>(</span><span class='symbol'>:net_http_connect_on_start</span> <span class='op'>=&gt;</span> <span class='kw'>true</span><span class='rparen'>)</span>
+</pre>
+
+<p>This forces WebMock Net::HTTP adapter to always connect on <code>Net::HTTP.start</code>. Check 'Connecting on Net::HTTP.start' in README for more information.</p>
+
+<p>Thanks to Alastair Brunton for reporting the issue and for fix suggestions.</p></li>
+<li><p>Fixed an issue where Patron spec tried to remove system temporary directory.
+Thanks to Hans de Graaff</p></li>
+<li><p>WebMock specs now use RSpec 2</p></li>
+<li><p><code>rake spec NO_CONNECTION=true</code> can now be used to only run WebMock specs which do not make real network connections</p></li>
+</ul>
+
+
+<h2>1.4.0</h2>
+
+<ul>
+<li><p>Curb support!!! Thanks to the awesome work of Pete Higgins!</p></li>
+<li><p><code>include WebMock</code> is now deprecated to avoid method and constant name conflicts. Please <code>include WebMock::API</code> instead.</p></li>
+<li><p><code>WebMock::API#request</code> is renamed to <code>WebMock::API#a_request</code> to prevent method name conflicts with i.e. Rails controller specs.
+WebMock.request is still available.</p></li>
+<li><p>Deprecated <code>WebMock#request</code>, <code>WebMock#allow_net_connect!</code>, <code>WebMock#net_connect_allowed?</code>, <code>WebMock#registered_request?</code>, <code>WebMock#reset_callbacks</code>, <code>WebMock#after_request</code> instance methods. These methods are still available, but only as WebMock class methods.</p></li>
+<li><p>Removed <code>WebMock.response_for_request</code> and <code>WebMock.assertion_failure</code> which were only used internally and were not documented.</p></li>
+<li><p>:allow_localhost => true' now permits 0.0.0.0 in addition to 127.0.0.1 and 'localhost'. Thanks to Myron Marston and Mike Gehard for suggesting this.</p></li>
+<li><p>Fixed issue with both RSpec 1.x and 2.x being available.</p>
+
+<p>WebMock now tries to use already loaded version of RSpec (1.x or 2.x). Previously it was loading RSpec 2.0 if available, even if RSpec 1.3 was already loaded.</p>
+
+<p>Thanks to Hans de Graaff for reporting this.</p></li>
+<li><p>Changed runtime dependency on Addressable version 2.2.2 which fixes handling of percent-escaped '+'</p></li>
+</ul>
+
+
+<h2>1.3.5</h2>
+
+<ul>
+<li><p>External requests can be disabled while allowing selected hosts. Thanks to Charles Li and Ryan Bigg</p>
+
+<p>This feature was available before only for localhost with <code>:allow_localhost =&gt; true</code></p>
+
+<pre class="code">          <span class='const'>WebMock</span><span class='period'>.</span><span class='id disable_net_connect!'>disable_net_connect!</span><span class='lparen'>(</span><span class='symbol'>:allow</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>www.example.org</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+
+          <span class='const'>Net</span><span class='op'>::</span><span class='const'>HTTP</span><span class='period'>.</span><span class='id get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>www.something.com</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>/</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>   <span class='comment'># ===&gt; Failure
+</span>
+          <span class='const'>Net</span><span class='op'>::</span><span class='const'>HTTP</span><span class='period'>.</span><span class='id get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>www.example.org</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>/</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>      <span class='comment'># ===&gt; Allowed.
+</span></pre></li>
+<li><p>Fixed Net::HTTP adapter so that it preserves the original behavior of Net::HTTP.</p>
+
+<p>When making a request with a block that calls #read_body on the request,
+Net::HTTP causes the body to be set to a Net::ReadAdapter, but WebMock was causing the body to be set to a string.</p></li>
+</ul>
+
+
+<h2>1.3.4</h2>
+
+<ul>
+<li>Fixed Net::HTTP adapter to handle cases where a block with <code>read_body</code> call is passed to <code>request</code>.
+This fixes compatibility with <code>open-uri</code>. Thanks to Mark Evans for reporting the issue.</li>
+</ul>
+
+
+<h2>1.3.3</h2>
+
+<ul>
+<li>Fixed handling of multiple values for the same response header for Net::HTTP. Thanks to Myron Marston for reporting the issue.</li>
+</ul>
+
+
+<h2>1.3.2</h2>
+
+<ul>
+<li>Fixed compatibility with EM-HTTP-Request >= 0.2.9. Thanks to Myron Marston for reporting the issue.</li>
+</ul>
+
+
+<h2>1.3.1</h2>
+
+<ul>
+<li><p>The less hacky way to get the stream behaviour working for em-http-request. Thanks to Martyn Loughran</p></li>
+<li><p>Fixed issues where Net::HTTP was not accepting valid nil response body. Thanks to Muness Alrubaie</p></li>
+</ul>
+
+
+<h2>1.3.0</h2>
+
+<ul>
+<li><p>Added support for <a href="http://github.com/igrigorik/em-http-request">em-http-request</a></p></li>
+<li><p>Matching query params using a hash</p>
+
+<pre class="code">           <span class='id stub_http_request'>stub_http_request</span><span class='lparen'>(</span><span class='symbol'>:get</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>www.example.com</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id with'>with</span><span class='lparen'>(</span><span class='symbol'>:query</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>a</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>b</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>c</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+
+           <span class='const'>RestClient</span><span class='period'>.</span><span class='id get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>http://www.example.com/?a[]=b&amp;a[]=c</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='comment'># ===&gt; Success
+</span>
+           <span class='id request'>request</span><span class='lparen'>(</span><span class='symbol'>:get</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>www.example.com</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id with'>with</span><span class='lparen'>(</span><span class='symbol'>:query</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>a</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>b</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>c</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='rbrace'>}</span><span class='rparen'>)</span><span class='period'>.</span><span class='id should'>should</span> <span class='id have_been_made'>have_been_made</span>  <span class='comment'># ===&gt; Success
+</span></pre></li>
+<li><p>Matching request body against a hash. Body can be URL-Encoded, JSON or XML.</p>
+
+<p>(Thanks to Steve Tooke for the idea and a solution for url-encoded bodies)</p>
+
+<pre class="code">          stub_http_request(:post, &quot;www.example.com&quot;).
+                  with(:body =&gt; {:data =&gt; {:a =&gt; '1', :b =&gt; 'five'}})
+
+          RestClient.post('www.example.com', &quot;data[a]=1&amp;data[b]=five&quot;,
+          :content_type =&gt; 'application/x-www-form-urlencoded')    # ===&gt; Success
+
+          RestClient.post('www.example.com', '{&quot;data&quot;:{&quot;a&quot;:&quot;1&quot;,&quot;b&quot;:&quot;five&quot;}}',
+          :content_type =&gt; 'application/json')    # ===&gt; Success
+
+          RestClient.post('www.example.com', '&lt;data a=&quot;1&quot; b=&quot;five&quot; /&gt;',
+                  :content_type =&gt; 'application/xml' )    # ===&gt; Success
+
+          request(:post, &quot;www.example.com&quot;).
+  with(:body =&gt; {:data =&gt; {:a =&gt; '1', :b =&gt; 'five'}},
+   :headers =&gt; 'Content-Type' =&gt; 'application/json').should have_been_made         # ===&gt; Success
+</pre></li>
+<li><p>Request callbacks (Thanks to Myron Marston for all suggestions)</p>
+
+<p>  WebMock can now invoke callbacks for stubbed or real requests:</p>
+
+<pre class="code">          <span class='const'>WebMock</span><span class='period'>.</span><span class='id after_request'>after_request</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id request_signature'>request_signature</span><span class='comma'>,</span> <span class='id response'>response</span><span class='op'>|</span>
+            <span class='id puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Request </span><span class='embexpr_beg'>#{</span><span class='id request_signature'>request_signature</span><span class='rbrace'>}</span><span class='tstring_content'> was made and </span><span class='embexpr_beg'>#{</span><span class='id response'>response</span><span class='rbrace'>}</span><span class='tstring_content'> was returned</span><span class='tstring_end'>&quot;</span></span>
+          <span class='kw'>end</span>
+</pre>
+
+<p>  invoke callbacks for real requests only and except requests made with Patron client</p>
+
+<pre class="code">          <span class='const'>WebMock</span><span class='period'>.</span><span class='id after_request'>after_request</span><span class='lparen'>(</span><span class='symbol'>:except</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='symbol'>:patron</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='symbol'>:real_requests_only</span> <span class='op'>=&gt;</span> <span class='kw'>true</span><span class='rparen'>)</span>  <span class='kw'>do</span> <span class='op'>|</span><span class='id request_signature'>request_signature</span><span class='comma'>,</span> <span class='id response'>response</span><span class='op'>|</span>
+            <span class='id puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Request </span><span class='embexpr_beg'>#{</span><span class='id request_signature'>request_signature</span><span class='rbrace'>}</span><span class='tstring_content'> was made and </span><span class='embexpr_beg'>#{</span><span class='id response'>response</span><span class='rbrace'>}</span><span class='tstring_content'> was returned</span><span class='tstring_end'>&quot;</span></span>
+          <span class='kw'>end</span>
+</pre></li>
+<li><p><code>to_raise()</code> now accepts an exception instance or a string as argument in addition to an exception class</p>
+
+<pre class="code">          <span class='id stub_request'>stub_request</span><span class='lparen'>(</span><span class='symbol'>:any</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>www.example.net</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id to_raise'>to_raise</span><span class='lparen'>(</span><span class='const'>StandardError</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>some error</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='rparen'>)</span>
+
+          <span class='id stub_request'>stub_request</span><span class='lparen'>(</span><span class='symbol'>:any</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>www.example.net</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id to_raise'>to_raise</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>some error</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+</pre></li>
+<li><p>Matching requests based on a URI is 30% faster</p></li>
+<li><p>Fixed constant namespace issues in HTTPClient adapter. Thanks to Nathaniel Bibler for submitting a patch.</p></li>
+</ul>
+
+
+<h2>1.2.2</h2>
+
+<ul>
+<li>Fixed problem where ArgumentError was raised if query params were made up of an array e.g. data[]=a&amp;data[]=b. Thanks to Steve Tooke</li>
+</ul>
+
+
+<h2>1.2.1</h2>
+
+<ul>
+<li><p>Changed license from GPL to MIT</p></li>
+<li><p>Fixed gemspec file. Thanks to Razic</p></li>
+</ul>
+
+
+<h2>1.2.0</h2>
+
+<ul>
+<li><p>RSpec 2 compatibility. Thanks to Sam Phillips!</p></li>
+<li><p>:allow_localhost => true' now permits 127.0.0.1 as well as 'localhost'. Thanks to Mack Earnhardt</p></li>
+<li><p>Request URI matching in now 2x faster!</p></li>
+</ul>
+
+
+<h2>1.1.0</h2>
+
+<ul>
+<li><p><a href="http://github.com/myronmarston/vcr/">VCR</a> compatibility. Many thanks to Myron Marston for all suggestions.</p></li>
+<li><p>Support for stubbing requests and returning responses with multiple headers with the same name. i.e multiple Accept headers.</p>
+
+<pre class="code">          <span class='id stub_http_request'>stub_http_request</span><span class='lparen'>(</span><span class='symbol'>:get</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>www.example.com</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='period'>.</span>
+            <span class='id with'>with</span><span class='lparen'>(</span><span class='symbol'>:headers</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Accept</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>image/png</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>image/jpeg</span><span class='tstring_end'>'</span></span><span class='rbracket'>]</span><span class='rbrace'>}</span><span class='rparen'>)</span><span class='period'>.</span>
+            <span class='id to_return'>to_return</span><span class='lparen'>(</span><span class='symbol'>:body</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>abc</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+          <span class='const'>RestClient</span><span class='period'>.</span><span class='id get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>www.example.com</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+           <span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Accept</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>image/png</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>image/jpeg</span><span class='tstring_end'>'</span></span><span class='rbracket'>]</span><span class='rbrace'>}</span><span class='rparen'>)</span> <span class='comment'># ===&gt; &quot;abc\n&quot;
+</span></pre></li>
+<li><p>When real net connections are disabled and unstubbed request is made, WebMock throws WebMock::NetConnectNotAllowedError instead of assertion error or StandardError.</p></li>
+<li><p>Added WebMock.version()</p></li>
+</ul>
+
+
+<h2>1.0.0</h2>
+
+<ul>
+<li><p>Added support for <a href="http://toland.github.com/patron/">Patron</a></p></li>
+<li><p>Responses dynamically evaluated from block (idea and implementation by Tom Ward)</p>
+
+<pre class="code">          <span class='id stub_request'>stub_request</span><span class='lparen'>(</span><span class='symbol'>:any</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>www.example.net</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='period'>.</span>
+               <span class='id to_return'>to_return</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id request'>request</span><span class='op'>|</span> <span class='lbrace'>{</span><span class='symbol'>:body</span> <span class='op'>=&gt;</span> <span class='id request'>request</span><span class='period'>.</span><span class='id body'>body</span><span class='rbrace'>}</span> <span class='rbrace'>}</span>
+
+          <span class='const'>RestClient</span><span class='period'>.</span><span class='id post'>post</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>www.example.net</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>abc</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>    <span class='comment'># ===&gt; &quot;abc\n&quot;
+</span></pre></li>
+<li><p>Responses dynamically evaluated from lambda (idea and implementation by Tom Ward)</p>
+
+<pre class="code">  <span class='id stub_request'>stub_request</span><span class='lparen'>(</span><span class='symbol'>:any</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>www.example.net</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='period'>.</span>
+        <span class='id to_return'>to_return</span><span class='lparen'>(</span><span class='id lambda'>lambda</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id request'>request</span><span class='op'>|</span> <span class='lbrace'>{</span><span class='symbol'>:body</span> <span class='op'>=&gt;</span> <span class='id request'>request</span><span class='period'>.</span><span class='id body'>body</span><span class='rbrace'>}</span> <span class='rbrace'>}</span><span class='rparen'>)</span>
+
+      <span class='const'>RestClient</span><span class='period'>.</span><span class='id post'>post</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>www.example.net</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>abc</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>    <span class='comment'># ===&gt; &quot;abc\n&quot;
+</span></pre></li>
+<li><p>Response with custom status message</p>
+
+<pre class="code">          <span class='id stub_request'>stub_request</span><span class='lparen'>(</span><span class='symbol'>:any</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>www.example.com</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id to_return'>to_return</span><span class='lparen'>(</span><span class='symbol'>:status</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='int'>500</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Internal Server Error</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span>
+
+          <span class='id req'>req</span> <span class='op'>=</span> <span class='const'>Net</span><span class='op'>::</span><span class='const'>HTTP</span><span class='op'>::</span><span class='const'>Get</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+          <span class='const'>Net</span><span class='op'>::</span><span class='const'>HTTP</span><span class='period'>.</span><span class='id start'>start</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>www.example.com</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id http'>http</span><span class='op'>|</span> <span class='id http'>http</span><span class='period'>.</span><span class='id request'>request</span><span class='lparen'>(</span><span class='id req'>req</span><span class='rparen'>)</span> <span class='rbrace'>}</span><span class='period'>.</span><span class='id message'>message</span> <span class='comment'># ===&gt; &quot;Internal Server Error&quot;
+</span></pre></li>
+<li><p>Raising timeout errors (suggested by Jeffrey Jones) (compatibility with Ruby 1.8.6 by Mack Earnhardt)</p>
+
+<pre class="code">          <span class='id stub_request'>stub_request</span><span class='lparen'>(</span><span class='symbol'>:any</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>www.example.net</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id to_timeout'>to_timeout</span>
+
+          <span class='const'>RestClient</span><span class='period'>.</span><span class='id post'>post</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>www.example.net</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>abc</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>    <span class='comment'># ===&gt; RestClient::RequestTimeout
+</span></pre></li>
+<li><p>External requests can be disabled while allowing localhost (idea and implementation by Mack Earnhardt)</p>
+
+<pre class="code">          <span class='const'>WebMock</span><span class='period'>.</span><span class='id disable_net_connect!'>disable_net_connect!</span><span class='lparen'>(</span><span class='symbol'>:allow_localhost</span> <span class='op'>=&gt;</span> <span class='kw'>true</span><span class='rparen'>)</span>
+
+          <span class='const'>Net</span><span class='op'>::</span><span class='const'>HTTP</span><span class='period'>.</span><span class='id get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>www.something.com</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>/</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>   <span class='comment'># ===&gt; Failure
+</span>
+          <span class='const'>Net</span><span class='op'>::</span><span class='const'>HTTP</span><span class='period'>.</span><span class='id get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>localhost:9887</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>/</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>      <span class='comment'># ===&gt; Allowed. Perhaps to Selenium?
+</span></pre></li>
+</ul>
+
+
+<h3>Bug fixes</h3>
+
+<ul>
+<li>Fixed issue where Net::HTTP adapter didn't work for requests with body responding to read (reported by Tekin Suleyman)</li>
+<li>Fixed issue where request stub with headers declared as nil was matching requests with non empty headers</li>
+</ul>
+
+
+<h2>0.9.1</h2>
+
+<ul>
+<li>Fixed issue where response status code was not read from raw (curl -is) responses</li>
+</ul>
+
+
+<h2>0.9.0</h2>
+
+<ul>
+<li><p>Matching requests against provided block (by Sergio Gil)</p>
+
+<pre class="code">          <span class='id stub_request'>stub_request</span><span class='lparen'>(</span><span class='symbol'>:post</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>www.example.com</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id with'>with</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id request'>request</span><span class='op'>|</span> <span class='id request'>request</span><span class='period'>.</span><span class='id body'>body</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>abc</span><span class='tstring_end'>&quot;</span></span> <span class='rbrace'>}</span><span class='period'>.</span><span class='id to_return'>to_return</span><span class='lparen'>(</span><span class='symbol'>:body</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>def</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+          <span class='const'>RestClient</span><span class='period'>.</span><span class='id post'>post</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>www.example.com</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>abc</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>    <span class='comment'># ===&gt; &quot;def\n&quot;
+</span>          <span class='id request'>request</span><span class='lparen'>(</span><span class='symbol'>:post</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>www.example.com</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id with'>with</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id req'>req</span><span class='op'>|</span> <span class='id req'>req</span><span class='period'>.</span><span class='id body'>body</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>abc</span><span class='tstring_end'>&quot;</span></span> <span class='rbrace'>}</span><span class='period'>.</span><span class='id should'>should</span> <span class='id have_been_made'>have_been_made</span>
+          <span class='comment'>#or
+</span>          <span class='id assert_requested'>assert_requested</span><span class='lparen'>(</span><span class='symbol'>:post</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>www.example.com</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id req'>req</span><span class='op'>|</span> <span class='id req'>req</span><span class='period'>.</span><span class='id body'>body</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>abc</span><span class='tstring_end'>&quot;</span></span> <span class='rbrace'>}</span>
+</pre></li>
+<li><p>Matching request body against regular expressions (suggested by Ben Pickles)</p>
+
+<pre class="code">          <span class='id stub_request'>stub_request</span><span class='lparen'>(</span><span class='symbol'>:post</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>www.example.com</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id with'>with</span><span class='lparen'>(</span><span class='symbol'>:body</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^.*world$</span><span class='regexp_end'>/</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id to_return'>to_return</span><span class='lparen'>(</span><span class='symbol'>:body</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>abc</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+          <span class='const'>RestClient</span><span class='period'>.</span><span class='id post'>post</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>www.example.com</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>hello world</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>    <span class='comment'># ===&gt; &quot;abc\n&quot;
+</span></pre></li>
+<li><p>Matching request headers against regular expressions (suggested by Ben Pickles)</p>
+
+<pre class="code">          <span class='id stub_request'>stub_request</span><span class='lparen'>(</span><span class='symbol'>:post</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>www.example.com</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id with'>with</span><span class='lparen'>(</span><span class='symbol'>:headers</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Content-Type</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>image\/.+</span><span class='regexp_end'>/</span></span><span class='rbrace'>}</span><span class='rparen'>)</span><span class='period'>.</span><span class='id to_return'>to_return</span><span class='lparen'>(</span><span class='symbol'>:body</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>abc</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+          <span class='const'>RestClient</span><span class='period'>.</span><span class='id post'>post</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>www.example.com</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Content-Type</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>image/png</span><span class='tstring_end'>'</span></span><span class='rbrace'>}</span><span class='rparen'>)</span>    <span class='comment'># ===&gt; &quot;abc\n&quot;
+</span></pre></li>
+<li><p>Replaying raw responses recorded with <code>curl -is</code></p>
+
+<pre class="code">          `curl -is www.example.com &gt; /tmp/example_curl_-is_output.txt`
+          raw_response_file = File.new(&quot;/tmp/example_curl_-is_output.txt&quot;)
+
+  from file
+
+          stub_request(:get, &quot;www.example.com&quot;).to_return(raw_response_file)
+
+  or string
+
+          stub_request(:get, &quot;www.example.com&quot;).to_return(raw_response_file.read)
+</pre></li>
+<li><p>Multiple responses for repeated requests</p>
+
+<pre class="code">          <span class='id stub_request'>stub_request</span><span class='lparen'>(</span><span class='symbol'>:get</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>www.example.com</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id to_return'>to_return</span><span class='lparen'>(</span><span class='lbrace'>{</span><span class='symbol'>:body</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>abc</span><span class='tstring_end'>&quot;</span></span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='lbrace'>{</span><span class='symbol'>:body</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>def</span><span class='tstring_end'>&quot;</span></span><span class='rbrace'>}</span><span class='rparen'>)</span>
+          <span class='const'>Net</span><span class='op'>::</span><span class='const'>HTTP</span><span class='period'>.</span><span class='id get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>www.example.com</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>/</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>    <span class='comment'># ===&gt; &quot;abc\n&quot;
+</span>          <span class='const'>Net</span><span class='op'>::</span><span class='const'>HTTP</span><span class='period'>.</span><span class='id get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>www.example.com</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>/</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>    <span class='comment'># ===&gt; &quot;def\n&quot;
+</span></pre></li>
+<li><p>Multiple responses using chained <code>to_return()</code> or <code>to_raise()</code> declarations</p>
+
+<pre class="code">          <span class='id stub_request'>stub_request</span><span class='lparen'>(</span><span class='symbol'>:get</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>www.example.com</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span>
+                  <span class='id to_return'>to_return</span><span class='lparen'>(</span><span class='lbrace'>{</span><span class='symbol'>:body</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>abc</span><span class='tstring_end'>&quot;</span></span><span class='rbrace'>}</span><span class='rparen'>)</span><span class='period'>.</span><span class='id then'>then</span><span class='period'>.</span>  <span class='comment'>#then() just is a syntactic sugar
+</span>                  <span class='id to_return'>to_return</span><span class='lparen'>(</span><span class='lbrace'>{</span><span class='symbol'>:body</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>def</span><span class='tstring_end'>&quot;</span></span><span class='rbrace'>}</span><span class='rparen'>)</span><span class='period'>.</span><span class='id then'>then</span><span class='period'>.</span>
+                  <span class='id to_raise'>to_raise</span><span class='lparen'>(</span><span class='const'>MyException</span><span class='rparen'>)</span>
+          <span class='const'>Net</span><span class='op'>::</span><span class='const'>HTTP</span><span class='period'>.</span><span class='id get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>www.example.com</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>/</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>    <span class='comment'># ===&gt; &quot;abc\n&quot;
+</span>          <span class='const'>Net</span><span class='op'>::</span><span class='const'>HTTP</span><span class='period'>.</span><span class='id get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>www.example.com</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>/</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>    <span class='comment'># ===&gt; &quot;def\n&quot;
+</span>          <span class='const'>Net</span><span class='op'>::</span><span class='const'>HTTP</span><span class='period'>.</span><span class='id get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>www.example.com</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>/</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>    <span class='comment'># ===&gt; MyException raised
+</span></pre></li>
+<li><p>Specifying number of times given response should be returned</p>
+
+<pre class="code">          <span class='id stub_request'>stub_request</span><span class='lparen'>(</span><span class='symbol'>:get</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>www.example.com</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span>
+                  <span class='id to_return'>to_return</span><span class='lparen'>(</span><span class='lbrace'>{</span><span class='symbol'>:body</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>abc</span><span class='tstring_end'>&quot;</span></span><span class='rbrace'>}</span><span class='rparen'>)</span><span class='period'>.</span><span class='id times'>times</span><span class='lparen'>(</span><span class='int'>2</span><span class='rparen'>)</span><span class='period'>.</span><span class='id then'>then</span><span class='period'>.</span>
+                  <span class='id to_return'>to_return</span><span class='lparen'>(</span><span class='lbrace'>{</span><span class='symbol'>:body</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>def</span><span class='tstring_end'>&quot;</span></span><span class='rbrace'>}</span><span class='rparen'>)</span>
+
+          <span class='const'>Net</span><span class='op'>::</span><span class='const'>HTTP</span><span class='period'>.</span><span class='id get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>www.example.com</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>/</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>    <span class='comment'># ===&gt; &quot;abc\n&quot;
+</span>          <span class='const'>Net</span><span class='op'>::</span><span class='const'>HTTP</span><span class='period'>.</span><span class='id get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>www.example.com</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>/</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>    <span class='comment'># ===&gt; &quot;abc\n&quot;
+</span>          <span class='const'>Net</span><span class='op'>::</span><span class='const'>HTTP</span><span class='period'>.</span><span class='id get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>www.example.com</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>/</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>    <span class='comment'># ===&gt; &quot;def\n&quot;
+</span></pre></li>
+<li><p>Added support for <code>Net::HTTP::Post#body_stream</code></p>
+
+<pre class="code">  <span class='const'>This</span> <span class='id fixes'>fixes</span> <span class='id compatibility'>compatibility</span> <span class='id with'>with</span> <span class='id new'>new</span> <span class='id versions'>versions</span> <span class='id of'>of</span> <span class='const'>RestClient</span>
+</pre></li>
+<li><p>WebMock doesn't suppress default request headers added by http clients anymore.</p>
+
+<pre class="code">  i.e. Net::HTTP adds `'Accept'=&gt;'*/*'` to all requests by default
+</pre></li>
+</ul>
+
+
+<h2>0.8.2</h2>
+
+<ul>
+<li>Fixed issue where WebMock was not closing IO object passed as response body after reading it.</li>
+<li>Ruby 1.9.2 compat: Use <code>File#expand_path</code> for require path because "." is not be included in LOAD_PATH since Ruby 1.9.2</li>
+</ul>
+
+
+<h2>0.8.1</h2>
+
+<ul>
+<li>Fixed HTTPClient adapter compatibility with Ruby 1.8.6 (reported by Piotr Usewicz)</li>
+<li>Net:HTTP adapter now handles request body assigned as Net::HTTP::Post#body attribute (fixed by Mack Earnhardt)</li>
+<li>Fixed issue where requests were not matching stubs with Accept header set.(reported by Piotr Usewicz)</li>
+<li>Fixed compatibility with Ruby 1.9.1, 1.9.2 and JRuby 1.3.1 (reported by Diego E. “Flameeyes” Pettenò)</li>
+<li>Fixed issue with response body declared as IO object and multiple requests (reported by Niels Meersschaert)</li>
+<li>Fixed "undefined method `assertion_failure'" error (reported by Nick Plante)</li>
+</ul>
+
+
+<h2>0.8.0</h2>
+
+<ul>
+<li>Support for HTTPClient (sync and async requests)</li>
+<li>Support for dynamic responses. Response body and headers can be now declared as lambda.
+
+<pre class="code">(Thanks to Ivan Vega ( @ivanyv ) for suggesting this feature)
+</pre></li>
+<li>Support for stubbing and expecting requests with empty body</li>
+<li>Executing non-stubbed request leads to failed expectation instead of error</li>
+</ul>
+
+
+<h3>Bug fixes</h3>
+
+<ul>
+<li>Basic authentication now works correctly</li>
+<li>Fixed problem where WebMock didn't call a block with the response when block was provided</li>
+<li>Fixed problem where uris with single slash were not matching uris without path provided</li>
+</ul>
+
+
+<h2>0.7.3</h2>
+
+<ul>
+<li>Clarified documentation</li>
+<li>Fixed some issues with loading of Webmock classes</li>
+<li>Test::Unit and RSpec adapters have to be required separately</li>
+</ul>
+
+
+<h2>0.7.2</h2>
+
+<ul>
+<li>Added support for matching escaped and non escaped URLs</li>
+</ul>
+
+</div></div>
+    
+    <div id="footer">
+  Generated on Sun Jul  3 13:36:31 2011 by 
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.7.2 (ruby-1.9.2).
+</div>
+
+  </body>
+</html>
